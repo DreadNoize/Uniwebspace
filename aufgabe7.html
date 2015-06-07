@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>IC Aufgabenblatt 7</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML-HTMLorMML" defer></script>-->
+        <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+
+</head>
+	<div class="polka">
+		<h2><u>Information und Codierung Aufgabenblatt 7</u></h2>
+			<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+			<ul>
+			<li><b><u>7.2 - Bitverarbeitung</u></b></li>
+				<ul>
+					<li><b>Addition zweier natürlicher Zahlen mit bitweisen Operationen (Java)</b></li>
+                    <ul>
+                        <li>Quellcode</li>
+<pre><code>class SumWithBinaryOperators{
+
+    public static void main(String[] args) {
+        int firstNumber = Integer.parseInt(args[0]);
+        int secondNumber = Integer.parseInt(args[1]);
+
+        System.out.println(sumIt(firstNumber, secondNumber));
+    }
+        public static int sumIt(int kompott1, int kompott2){
+            while (kompott2!=0) {
+                int carrykompott = (kompott1 &amp; kompott2);
+                    kompott1 = kompott1 ^ kompott2;
+                    kompott2 = carrykompott &lt;&lt; 1;
+            }
+            return kompott1;
+        }
+        
+    
+}
+    
+</code></pre>
+
+                        <li>Probeläufe</li>
+                        <p class="tests">
+                            C:\...\UNI\IC\web>java SumWithBinaryOperators 0 0
+                            <br>
+                            0
+                            <br>
+                            C:\...\UNI\IC\web>java SumWithBinaryOperators 21 21
+                            <br>
+                            42
+                            <br>
+                            C:\...\UNI\IC\web>java SumWithBinaryOperators 1 99
+                            <br>
+                            100
+                            <br>
+                            C:\...\UNI\IC\web>java SumWithBinaryOperators 666 42
+                            <br>
+                            708
+                            <br>
+                            C:\...\UNI\IC\web>java SumWithBinaryOperators 0 1000
+                            <br>
+                            1000
+                            <br>
+                            C:\...\UNI\IC\web>java SumWithBinaryOperators 123456789 987654321
+                            <br>
+                            1111111110
+                        </p>
+
+                    </ul>
+
+                </ul>
+			<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+
+            </ul>
+	</div>
+</body>
+</html>

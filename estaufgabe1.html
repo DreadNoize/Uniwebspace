@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>EST Aufgabenblatt 1</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script> <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!--<hr> Horizontale Trennlinie -->
+<!--<ol> (geordnete Liste) <li>Peter</li></ol>-->
+<div class="polka">
+    <h2><u>Elektrotechnik und Systemtheorie Aufgabenblatt 1</u></h2>
+    <p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+<ul>
+		<li><b><u>1.2 - Winkelfunktionen – Wechselstromrechnung</u></b></li>
+			<ul><li><b>c)</b></li>
+			<p>Mit Û wird der Scheitelwert eines Signals bezeichnet. Es bezeichnet den Höchstwert des Signals. <b>&#969;</b> bezeichnet die Kreisfrequenz. Sie lässt sich mit \( \frac{2 \pi}{T} \) berechnen, wobei \( T \) die Dauer einer Schwing ist. Hier beträgt \( T = 20\) ms. Daraus ergibt sich \( \omega = \frac{2 \pi}{20 ms} = \frac{\pi}{10} = 0,1 \pi \). <b>&#966;</b> ist der Phasenwinkel.</p> 
+			\[
+			\begin{align*}
+				u(t) &= Û \cdot \sin(\omega t + \varphi_0)\\
+				u(t = 0 ms) = 2 V &= Û \cdot \sin(0ms \cdot \omega + \varphi_0)\\
+				u(t = 5,5 ms) = 10,41 V &= Û \cdot \sin(5,5ms \cdot \omega + \varphi_0)\\ 
+				\\
+				\Rightarrow Û &= \frac{2 V}{\sin(\varphi_0)} = \frac{10,41 V}{\sin(\omega t + \varphi_0)}\\
+				\Rightarrow 10,41 V &= \frac{2 V \cdot \sin(\omega t + \varphi_0)}{\sin(\varphi_0)}\\
+				\Rightarrow \frac{10,41 V}{2 V} &= \frac{\sin(\omega t + \varphi_0)}{\sin(\varphi_0)}\\ \\
+				\text{Mit dem Additionstheorem}&\text{ können wir nun den Term } \sin(\omega t + \varphi_0) \text{ aufspalten:}\\ \\
+				\frac{10,41 V}{2 V} &= \frac{\sin(\omega t)\cos(\varphi_0) + \cos(\omega t)\sin(\varphi_0) }{\sin(\varphi_0)}\\
+				\frac{10,41 V}{2 V} &= \frac{\sin(\omega t)\cos(\varphi_0) }{\sin(\varphi_0)} + \frac{\cos(\omega t)\sin(\varphi_0) }{\sin(\varphi_0)}\\
+				\frac{10,41 V}{2 V} &= \frac{\sin(\omega t)\cos(\varphi_0) }{\sin(\varphi_0)} + \cos(\omega t)\\
+				\Rightarrow \frac{10,41 V}{2 V} - \cos(\omega t) &= \frac{\sin(\omega t)\cos(\varphi_0) }{\sin(\varphi_0)}\\
+				\Rightarrow \frac{\frac{10,41 V}{2 V} - \cos(\omega t)}{\sin(\omega t)} &= \frac{\cos(\varphi_0) }{\sin(\varphi_0)}\\ \\
+				\frac{\cos(\alpha)}{\sin(\alpha)} = \cot(\alpha) \\ \\
+				\Rightarrow \frac{\frac{10,41 V}{2 V} - \cos(\omega t)}{\sin(\omega t)} &= \cot(\varphi_0)\\
+				\Rightarrow \cot^{-1}\left(\frac{\frac{10,41 V}{2 V} - \cos(\omega t)}{\sin(\omega t)}\right) &= \varphi_0\\
+				\varphi_0 &= \cot^{-1}\left(\frac{\frac{10,41 V}{2 V} - \cos(0,55 \cdot \pi)}{\sin(0,55 \cdot \pi)}\right)\\
+				\varphi_0 &= 0,18217835416669\\ \\ \\ \\
+				Û &= \frac{2 V}{sin(0,18217835416669)}\\ \\
+				Û &= 11.039214731224763 V \\ \\
+				Û &= \frac{10,41 V}{\sin(0,55 \cdot \pi + 0,18217835416669)}\\ \\
+				Û &= 11.039214731224763 V \\ \\ \\ \\
+				\Rightarrow u(t) &= 11.039214731224763 V \cdot \sin(0.1\pi \cdot t + 0,18217835416669)
+			\end{align*}
+			\]
+			<img align="centre" src="pic/aufgabe12c.png" alt="Pocalujcie mnie w dupe">
+			<span class="quelle"><p>Geplottet mit <a href="http://www.geogebra.org/">Geogebra</a></p></span>
+			</ul>
+
+		<li><b><u>1.3 Überlagerung gleichfrequenter Schwingungen</u></b></li>
+			<ul><li><b>a) \( u_{res}(t) = A_{res} \cdot \sin( \omega \cdot t + \varphi_{res} ) \)</b></li>
+					<p>
+						Die Amplitude der resultierenden Schwingung lässt sich mit der Formel
+						\[
+							A_{res} = \sqrt{ A_{1}^{2} + A_{2}^{2} + 2 \cdot A_1 \cdot A_2 \cdot \cos(\varphi_{2} - \varphi_{1}) }
+						\]
+						berechen. Wir müssen also den Sinus in den Kosinus umwandeln.
+						\[
+						\begin{align*}
+							u_{1}(t) &= 100 V \cdot \sin(\omega \cdot t) \\
+									 &= 100 V \cdot \cos\left(\omega \cdot t - \frac{\pi}{2}\right) \\ \\
+							u_{2}(t) &= 40 V \cdot \sin\left(\omega \cdot t + \frac{\pi}{3}\right)\\
+									 &= 40 V \cdot \cos\left(\omega \cdot t + \frac{\pi}{3} - \frac{\pi}{2}\right)\\
+									 &= 40 V \cdot \cos\left(\omega \cdot t - \frac{\pi}{6}\right)
+						\end{align*}
+						\]
+						Jetzt alles in die obige Formel einfügen:
+						\[
+						\begin{align*}
+							A_{res} &= \sqrt{ 100^{2} V^2 + 40^{2} V^2 + 2 \cdot 100 V \cdot 40 V \cdot \cos\left(\left(-\frac{\pi}{6}\right) - \left(-\frac{\pi}{2}\right)\right)}\\
+							A_{res} &= \sqrt{ 10000 V^2 + 1600 V^2 + 8000 V^2 \cdot \cos\left(\frac{\pi}{3}\right)} \\
+							A_{res} &= \sqrt{ 11600 V^2 + 8000 V^2 \cdot \cos\left(\frac{\pi}{3}\right)} \\
+							A_{res} &= 20 \cdot \sqrt{39}V \approx 124,899959968 V 
+						\end{align*}
+						\]
+						Da es sich hier um Schwingungen gleicher Frequenz handelt benutzenden wir für den Phasenwinkel die Formel
+						\[
+						\begin{align*}
+							\varphi_{res} &= \arctan\left(\frac{A_1 \cdot \sin(\varphi_1) + A_2 \cdot \sin(\varphi_2)}{A_1 \cdot \cos(\varphi_1) + A_2 \cdot \cos(\varphi_2)}\right)\\
+							\varphi_{res} &= \arctan\left(\frac{100 V \cdot \sin(0) + 40 V \cdot \sin\left(\frac{\pi}{3}\right)}{100 V \cdot \cos(0) + 40 V \cdot \cos\left(\frac{\pi}{3}\right)}\right)\\
+							\varphi_{res} &= \arctan\left(\frac{40 V \cdot \sin\left(\frac{\pi}{3}\right)}{100 V + 40 V \cdot \cos\left(\frac{\pi}{3}\right)}\right)\\
+							\varphi_{res} &= \arctan\left(\frac{40 V \cdot \frac{ \sqrt{3}}{2}}{100 V + 40 V \cdot \frac{1}{2}}\right)\\
+							\varphi_{res} &= \arctan\left(\frac{20 V \cdot \sqrt{3} }{120 V }\right)\\
+							\varphi_{res} &= \arctan\left(\frac{\sqrt{3} }{6}\right)\\
+							\varphi_{res} &\approx 0,281034901503
+						\end{align*}
+						\]
+						Daraus ergibts sich:
+						\[
+						\begin{align*}
+							u_{res}(t) &= A_{res} \cdot \sin( \omega \cdot t + \varphi_{res} )\\
+							u_{res}(t) &= 20 \cdot \sqrt{39}V \cdot \sin\left( \omega \cdot t + \arctan\left(\frac{\sqrt{3}}{6}\right)\right)\\
+							u_{res}(t) &= 124,899959968 V  \cdot \sin\left( \omega \cdot t + 0,281034901503)\right)\\
+						\end{align*}
+						\]
+					</p>
+					<span class="quelle"><p>(Quellen: Uni Franfurt - <a href="https://elearning.physik.uni-frankfurt.de/data/FB13-PhysikOnline/lm_data/lm_324/daten/kap_8/node48.htm">Elearning Physik</a>, Uni Freiburg - <a href="http://www3.kis.uni-freiburg.de/~ovdluhe/Lehre/Einfuehrung_Physik_I/material/EP1_Schwingungen_Wellen_01.pdf">Einführung in die Physik I</a>)</p></span>
+				<li><b>b) Zeitfunktion und Zeigerdiagramm</b></li>
+					<img align="centre" src="pic/Aufgabe13b.png" alt="Zeitfunktion">
+					<figcaption>
+						<ul>
+							<li><span style="color: #00cc00;">Grün:</span> u<sub>1</sub>(t) = 100 V sin(&#969;t)</li>
+							<li><span style="color: #ff0000;">Rot:</span> u<sub>2</sub>(t) = 40 V sin(&#969;t + <sup>&#960;</sup>&frasl;<sub>3</sub>)</li>
+							<li><span style="color: #000000;">Weiß (innerhalb der schwarzen Funktion):</span> u(t) = u<sub>1</sub> + u<sub>2</sub></li>
+							<li><span style="color: #000000;">Schwarz und Dick:</span> u<sub>res</sub>(t) = 124,899959968 V sin(&#969;t + 0,281034901503)</li>
+						</ul>
+						<img align="centre" src="pic/Zeigerdiagramm.png" alt="Zeigerdiagramm">
+						<ul>
+							<li><span style="color: #ff0000;">Rote Kreuzschraffur:</span> &#966;<sub>1</sub> \( = \frac{\pi}{3} \)</li>
+							<li><span style="color: #000000;">Schwarze Kreuzschraffur:</span> &#966;<sub>res</sub> \( = \tan^{-1}\left(\frac{\sqrt{3}}{6}\right)\) </li>
+						</ul>
+						<span class="quelle"><p>Geplottet mit <a href="http://www.geogebra.org/">Geogebra</a></p></span>
+					</figcaption>
+					<p></p>
+				<li><b>c) Was ist ein Zeigerdiagramm?</b></li>
+					<p>
+						In der Physik werden häufig Zeigerdiagramme eingesetzt, vorallem in den Teilbereichen der Physik, die mit Schwingungen zu tun haben. Dazu gehört u.a. die Wechselstromlehre. In einem Zeigerdiagramm kann man das Verhältnis des Phasenwinkels zu der dazugehörenden Spannung oder Stromstärke betrachten.
+						</p>
+						<p>
+						Das Zeigerdiagramm lässt sich auch gut in der komplexen Ebene darstellen. Dabei wird auf der y-Achse der Imaginärteil und auf der x-Achse der Realteil abgetragen.
+					</p>
+					<span class="quelle"><p>(Quellen: de.wikipedia.org - <a href="http://de.wikipedia.org/wiki/Zeigermodell">Zeigermodell</a>)</p></span>
+			</ul>
+</ul>
+			<p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+
+
+
+
+
+
+
+
+	</div>
+</body>
+</html>

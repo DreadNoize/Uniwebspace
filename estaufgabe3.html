@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>EST Aufgabenblatt 3</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script> <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!--<hr> Horizontale Trennlinie -->
+<!--<ol> (geordnete Liste) <li>Peter</li></ol>-->
+<div class="polka">
+    <h2><u>Elektrotechnik und Systemtheorie Aufgabenblatt 3</u></h2>
+    <p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+<ul>
+        <li><b><u>3.2 Einfacher Gleichstromkreis </u></b></li>
+            <ul>
+                <li><b>a) Was zeigt das Voltmeter an?</b></li>
+                    <p>geg: P<sub>2</sub> = 1 W, P<sub>3</sub> = 2 W (beide für U<sub>N</sub> = 12 V), 
+                    U<sub>0</sub> = 10 V (= U<sub>ges</sub>), R<sub>1</sub> = 1 &#937;
+                    </p>
+                    <p>Die einzelnen Widerstände, lassen sich wie folgt berechnen: </p>
+                    \[
+                    \begin{align*}
+                    P_2 &= U_N \cdot I_N \\
+                    1 W &= 12 V \cdot I_N \\
+                    I_N &= \frac{1 W}{12 V} \\
+                    I_N &= \frac{1}{12} \text{   } \left[ \frac{W}{V} = \frac{V \cdot A}{V} = A \right] \\
+                    \\
+                    \\
+                    P_2 &= R_2 \cdot I_N^2 \\
+                    R_2 &= \frac{P_2}{I_N^2} \\
+                    R_2 &= \frac{1 W}{\frac{1}{144} A^2} \\
+                    R_2 &= 144 \text{   } \left[ \frac{W}{A^2} = \frac{V \cdot A}{A \cdot A} = \frac{V}{A} = \Omega \right] \\
+                    \\
+                    \\
+                    P_3 &= U_N \cdot I_N \\
+                    2 W &= 12 V \cdot I_N \\
+                    I_N &= \frac{2 W}{12 V} \\
+                    I_N &= \frac{2}{12} = \frac{1}{6} \text{   } \left[ \frac{W}{V} = \frac{V \cdot A}{V} = A \right] \\
+                    \\
+                    \\
+                    P_3 &= R_3 \cdot I_N^2 \\
+                    R_3 &= \frac{P_3}{I_N^2} \\
+                    R_3 &= \frac{2 W}{\frac{1}{36} A^2} \\
+                    R_3 &= 72 \text{   } \left[ \frac{W}{A^2} = \frac{V \cdot A}{A \cdot A} = \frac{V}{A} = \Omega \right]
+                    \end{align*}
+                    \]
+                    <p>Nun lässt sich der Gesamtwiderstandberechnen: </p>
+                    \[
+                    \begin{align*}
+                    R_{ges} &= R_1 + (R_2 || R_3) = R_1 + R_{2,3}\\ \\
+                    \frac{1}{R_{2,3}} &= \frac{1}{R_2} + \frac{1}{R_3} \\
+                    \frac{1}{R_{2,3}} &= \frac{1}{144} \Omega + \frac{1}{72} \Omega\\
+                    \frac{1}{R_{2,3}} &= \frac{3}{144} \Omega \\
+                    R_{2,3} &= \frac{144}{3} = 48 \Omega \\ \\
+                    R_{ges} &= 1 \Omega + 48 \Omega = 49 \Omega
+                    \end{align*}
+                    \]
+                    <p>Mit den Ergebnissen können wir die Spannung U<sub>1</sub> errechnen:</p>
+                    \[
+                    \begin{align*}
+                    U_1 &= \frac{R_1}{R_{ges}} \cdot U_{ges} \\
+                    U_1 &= \frac{1 \Omega}{49 \Omega} \cdot 10 V\\
+                    U_1 &= \frac{10}{49} V \\
+                    U_1 &= 0,204082 V
+                    \end{align*}
+                    \]
+                    <p>Das Voltmeter zeigt also 0,204082 Volt an.</p>
+                <li><b>b) Welchen Strom muss die Quelle aufbringen? </b></li>
+                    <p>Die Formel für den Gesamtstrom:</p>
+                    \[
+                    \begin{align*}
+                    I_{ges} &= \frac{U_{ges}}{R_{ges}} \\
+                    I_{ges} &= \frac{10 V}{49 \Omega} \\
+                    I_{ges} &= \frac{10}{49} \text{   } \left[ \frac{V}{\Omega} = A \right]\\
+                    I_{ges} &= 0,2041 A
+                    \end{align*}
+                    \]
+                    <p>Der Gesamtstrom beträgt 0,2041 Ampere.</p>
+
+                <li><b>c) Wie hoch ist der tatsächliche Leistungsumsatz in den einzelnen Lampen? </b></li>
+                \[
+                \begin{align*}
+                P_2 &= U_2 \cdot I_2 \\
+                P_2 &= U_2 \cdot \frac{U_2}{R_2} \\
+                P_2 &= \frac{U_2^2}{R_2} \\
+                P_2 &= \frac{(U_{ges} - U_1)^2}{R_2} \\
+                P_2 &= \frac{9,7959^2 V^2}{144 \Omega} = \frac{95.9597 V^2}{144 \Omega} \\
+                P_2 &= 0.666 \text{   } \left[ \frac{V^2}{\Omega} = \frac{V \cdot V}{\frac{V}{A}} = V \cdot A = W \right] \\
+                \\
+                \\
+                P_3 &= U_3 \cdot I_3 \\
+                P_3 &= U_3 \cdot \frac{U_3}{R_3} \\
+                P_3 &= \frac{U_3^2}{R_3} \\
+                P_3 &= \frac{(U_3 = U_2)^2}{R_3} \\
+                P_3 &= \frac{9,7959^2 V^2}{72 \Omega} = \frac{95.9597 V^2}{144 \Omega} \\
+                P_3 &= 1.333 \text{   } \left[ \frac{V^2}{\Omega} = \frac{V \cdot V}{\frac{V}{A}} = V \cdot A = W \right] 
+                \end{align*}
+                \]
+
+            </ul>
+
+        <li><b><u>3.3 Gleichspannungskreis mit mehreren Quellen </u></b></li>
+            <ul>
+                <li><b>a) Stromstärken</b></li>
+                <p>geg: U<sub>1</sub> = 1,5 Volt, U<sub>3</sub> = 1 Volt, R<sub>1</sub> = 10 m&#937; = 0,01 &#937;, R<sub>2</sub> = 1 &#937;, R<sub>3</sub> = 100 m&#937; = 0,1 &#937;</p>
+                <p>Der Knotensatz für diese Schaltung lautet \(I_1 - I_2 + I_3 = 0\). Das heißt \( I_1 = I_2 - I_3 \). </p>
+                <p>Für die Maschensätze gilt folgendes:</p>
+                \[ 
+                \begin{align*}
+                \text{Masche 1: } &U_1 - I_1 \cdot R_1 - I_2 \cdot R_2 = 0\\
+                \text{Masche 2: } &U_3 - I_3 \cdot R_3 - I_2 \cdot R_2 = 0 \\
+                \Rightarrow &U_1 = I_1 \cdot R_1 + I_2 \cdot R_2 = (I_2 - I_3) \cdot R_1 + I_2 \cdot R_2\\
+                \Rightarrow &U_3 = I_3 \cdot R_3 + I_2 \cdot R_2 \\
+                \end{align*}
+                \]
+                <p>Mit eingesetzten Werten: </p>
+                \[
+                \begin{align*}
+                \text{M 1: }1,5 V &= 0,01 \Omega \cdot (I_2 - I_3) + 1 \Omega \cdot I_2\\
+                1,5 V &= 0,01 \Omega \cdot I_2 + 1 \Omega \cdot I_2 - 0,01 \Omega \cdot I_3 = 1,01 \Omega \cdot I_2 - 0,01 \Omega \cdot I_3\\
+                \\
+                \text{M 2: }1 V &= 0,1 \Omega \cdot I_3 + 1 \Omega \cdot I_2\\
+                \end{align*}
+                \]
+                <p>Jetzt kann man alles in eine Matrix eintragen: </p>
+                <table>
+                  <tr>
+                    <th></th>
+                    <th>I<sub>2</sub></th>
+                    <th>I<sub>3</sub></th>
+                    <th>Ergebnis</th>
+                  </tr>
+                  <tr>
+                    <td><b>M I</b></td>
+                    <td>1,01 &#937;</td>
+                    <td>- 0,01 &#937;</td>
+                    <td>1,5 V</td>
+                  </tr>
+                  <tr>
+                    <td><b>M II</b></td>
+                    <td>1 &#937;</td>
+                    <td>0,1 &#937;</td>
+                    <td>1 V</td>
+                  </tr>
+                  <tr>
+                    <td><b>M I + 0,1*M II</b></td>
+                    <td>1,11 &#937;</td>
+                    <td>0</td>
+                    <td>1,6 V</td>
+                  </tr>
+                </table>
+                <p>Nun lässt sich I<sub>2</sub> einfach ausrechen:</p>
+                \[
+                \begin{align*}
+                1,11 \Omega \cdot I_2 - 0 \cdot I_3 &= 1,6 V \\
+                1,11 \Omega \cdot I_2 &= 1,6 V \\
+                I_2 &= \frac{1,6}{1,11} \left[ \frac{V}{\Omega} = A \rightarrow V = A \cdot \Omega \right]\\
+                I_2 &= 1,44 A \\
+                \\
+                \\
+                1 V &= 1,44 \Omega \cdot A + 0,1 \Omega \cdot I_3\\
+                I_3 &= \frac{1 - 1,44 V}{0,1 \Omega} \\
+                I_3 &= \frac{-0,44}{0,1} \left[ \frac{V}{\Omega} = A \right] = -4,4 A\\
+                \\
+                \\
+                I_1 &= I_2 - I_3 = 1,44 A - (-4,4) A = 5,84 A
+                \end{align*}
+                \]
+
+
+                <li><b>b) Simulation</b></li>
+                <img align="centre" src="pic/export.png" alt="Krasser Schaltplan">
+
+                <li><b>c) Interpretation für Stromrichtungen</b></li>
+                <p>Deutlich zusehen ist, dass es in dieser Schaltung immer mindestens einen Strom mit negativen Vorzeichen gibt. Dies erklärt sich durch die verschiedenen Spannungen. Dadurch entsteht immer ein Ausgleichsstrom, da U<sub>1</sub> stärker ist als U<sub>3</sub>. Deshalb sollte man ungleiche Spannungsquellen in Parallelschaltungen vermeinden.</p>
+                <p> 
+                ----------------------------------------------------------------------------------------------------------------------
+                </p>
+                <p>Dreht man jetzt z.B. den Richtungssinn der Masche 1 um, ergibt sich folgender Maschensatz:</p>
+                \[ 
+                \begin{align*}
+                \text{Masche 1: } -&U_1 + I_1 \cdot R_1 + I_2 \cdot R_2 = 0\\
+                \text{Masche 2: } &U_3 - I_3 \cdot R_3 - I_2 \cdot R_2 = 0 \\
+                \Rightarrow &U_1 = I_1 \cdot R_1 + I_2 \cdot R_2 = (I_2 - I_3) \cdot R_1 + I_2 \cdot R_2\\
+                \Rightarrow &U_3 = I_3 \cdot R_3 + I_2 \cdot R_2 \\
+                \end{align*}
+                \]
+                <p>Äquivalent dazu wenn man die Maschenrichtung in Masche 2 umkehrt: </p>
+                \[ 
+                \begin{align*}
+                \text{Masche 1: } &U_1 - I_1 \cdot R_1 - I_2 \cdot R_2 = 0\\
+                \text{Masche 2: } -&U_3 + I_3 \cdot R_3 + I_2 \cdot R_2 = 0 \\
+                \Rightarrow &U_1 = I_1 \cdot R_1 + I_2 \cdot R_2 = (I_2 - I_3) \cdot R_1 + I_2 \cdot R_2\\
+                \Rightarrow &U_3 = I_3 \cdot R_3 + I_2 \cdot R_2 \\
+                \end{align*}
+                \]
+                <p>Und Vollständigkeitshalber auch die Maschensätze bei Umkehrung beider Maschenrichtungen: </p>
+                \[ 
+                \begin{align*}
+                \text{Masche 1: } -&U_1 + I_1 \cdot R_1 + I_2 \cdot R_2 = 0\\
+                \text{Masche 2: } -&U_3 + I_3 \cdot R_3 + I_2 \cdot R_2 = 0 \\
+                \Rightarrow &U_1 = I_1 \cdot R_1 + I_2 \cdot R_2 = (I_2 - I_3) \cdot R_1 + I_2 \cdot R_2\\
+                \Rightarrow &U_3 = I_3 \cdot R_3 + I_2 \cdot R_2 \\
+                \end{align*}
+                \]
+
+                <p><b>Fazit: </b>Es ändert sich im Grunde nichts an den Stromrichtungen. Dafür müsste man schon die Spannungsquellen umdrehen. Dreht an beide um, bleiben die Stromstärken gleich, und die Stromrichtungen kehren sich um. Dreht man jeweils eine um, ändern sich Strom´richtung und -stärke:</p>
+
+                <img align="centre" src="pic/export5.png" alt="Doper Shit">
+                <p>Ausrichtung beider Spannungsquellen gleich</p>
+                <img align="centre" src="pic/export6.png" alt="Yo Diggah!">
+                <p>Ausrichtung beider Spannungsquellen verschieden</p>
+
+                <li><b>d) Konsequenzen für den Einsatz von Primärelementen</b></li>
+                <p>Setzt man nun in einer Parallelschaltung zwei Primär- oder Sekundärelemente ein, welche jeweils unterschiedeliche Spannungen haben, führt das zu einem hohen Verbrauch und einer schnellen Endladung der Zellen, was mit Batterien sehr unökologisch und mit Akkus unökonomisch wäre. Sind die Spannungsquellen dazu noch umgekehrt ausgerichtet (im Fachjargon heißt es dann falsch gepolt), kann es auch zu Kurzschlüssen kommen.</p>
+                <p><b>Fazit:</b> Just don&apos;t! Not worth it!</p>
+
+                <span class="quelle" ><p>(Quellen: de.wikipedia.org - <a href="http://de.wikipedia.org/wiki/Parallelschaltung">Parallelschaltung</a>, hobby-bastelecke.de - <a href="http://www.hobby-bastelecke.de/grundlagen/spannungsquellen_schaltungen.htm">Spannungsquellen in Parallelschaltungen</a></p></span>
+
+            </ul>
+</ul>
+            <p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

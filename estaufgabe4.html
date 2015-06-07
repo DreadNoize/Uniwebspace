@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>EST Aufgabenblatt 4</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script> <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!--<hr> Horizontale Trennlinie -->
+<!--<ol> (geordnete Liste) <li>Peter</li></ol>-->
+<div class="polka">
+    <h2><u>Elektrotechnik und Systemtheorie Aufgabenblatt 4</u></h2>
+    <p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+<ul>
+        <li><b><u>4.1 LED-Würfel </u></b></li>
+        <img src="pic/ledwuerfel.png" alt="Toller Würfel. Den leg ich hier hin!">
+        <p>Für die Simulation habe ich eine Spannungsquelle an die Knoten F und A gelegt. Der Strom fließt von F durch den Würfel nach A. Der Gesamtwiderstand in so einem Würfel ist immer der Widerstand in der Raumdiagonale. Heißt <b>R<sub>AF</sub> = R<sub>FA</sub> = R<sub>ges</sub></b>.</p>
+        <p>Das Schaltbild mit Stromrichtungen:</p>
+        <img src="pic/ledwuerfelschaltbild.png" alt="Freihandskizze ftw!">
+        <p>Man betrachte die Ströme. In F fließt der Gesamtstrom I<sub>ges</sub> rein und drei Ströme raus. Da alle Widerstände die gleiche Größe haben, verteilt sich der Strom gleichmäßig, heißt <b>I<sub>1</sub> = I<sub>2</sub> = I<sub>3</sub></b>. Das führt in F zu einem Knotensatz:
+                    \[
+                    \begin{align*} 
+                    I_{ges} &= I_{1} + I_{2} + I_{3} \\
+                    \Rightarrow I_{1} &= I_{2} = I_{3} = \frac{1}{3} I_{ges}\\
+                    \text{Daraus folgt } I_{4} &= I_{5}= I_{6}= I_{7}= I_{8}= I_{9} = \frac{1}{2} I_{1} = \frac{1}{2} I_{2} = \frac{1}{2} I_{3} =  \frac{1}{6} I_{ges}\\
+                    \text{und daraus wiederum } I_{10} &= I_{11} = I_{12} = I_{4} + I_{9}= I_{5} + I_{6} = I_{7} + I_{8} = \frac{1}{3} I_{ges}
+                    \end{align*}
+                    \]
+            <ul><li><b>a) Resultierender Widerstand R<sub>AF</sub></b></li>
+                    <p>Um den Widerstand R<sub>AF</sub> (= R<sub>FA</sub>) zu berechenen, müssen wir erst einen Weg von F zu A finden. Der gewählte Weg führt hier von F nach C über den Widerstand R<sub>21</sub>, von C zu B über den Widerstand R<sub>14</sub> und von B anschließend zu A. Das heißt wir haben hier drei Widerstände, an denen wir drei  Spannungen haben. Diese ergeben summiert die Spannung U<sub>FA</sub> welche gleich der Spannung U<sub>0</sub> ist. Wir haben also den Maschensatz: <b> U<sub>0</sub> = U<sub>FC</sub> + U<sub>CB</sub> + U<sub>BA</sub></b></p>
+                    
+                    <p>Überträgt man die Ströme in den Maschensatz, bekommt man folgende Gleichung:</p>
+                    \[
+                    \begin{align*}
+                        U_{0} &= I_{1} \cdot R_{21} + I_{5} \cdot R_{14} + I_{11} \cdot R_{17}\\ \\
+                        &\text{Da alle Widerstände gleich sind, kann man auf die Indizes verzichten:}\\ \\
+                        U_{0} &= I_{1} \cdot R + I_{5} \cdot R + I_{11} \cdot R\\
+                        U_{0} &= (I_{1} + I_{5} + I_{11}) \cdot R\\
+                        U_{0} &=  \frac{1}{3} I_{ges} + \frac{1}{6} I_{ges} + \frac{1}{3} I_{ges}) \cdot R\\
+                        U_{0} &= \frac{5}{6} I_{ges} \cdot R
+                    \end{align*}
+                    \]
+                    <p>Daraus kann man nun den Widerstand R<sub>AF</sub> berechene:</p>
+                    \[
+                    \begin{align*}
+                    R_{FA} &= R_{AF} = R_{ges} = \frac{U_{FA} = U_0}{I_{FA} = I_{ges}}\\ \\
+                    &= \frac{\frac{5}{6} \cdot I_{ges} \cdot R}{I_{ges}}\\ \\
+                    &= \frac{5}{6} \cdot R = \frac{5}{6} \cdot 1 \text{ k}\Omega = \frac{5}{6} \text{ k}\Omega \\ \\
+                    \end{align*}
+                    \]
+
+                <li><b>b) Resultierender Widerstand R<sub>AC</sub></b></li>
+                    <p>Hierfür müssen wir uns nur die Masche ABCD anschauen. Um zu sehen welche Widerstände parallel zu einander sind, muss überprüft werden, wo gleiche Spannungen auftauchen. Da alle Widerstände gleich sind und nur der Strom sich ändert, ist das relativ einfach.</p>
+                    \[
+                    \begin{align*}
+                    R_{AC} &= (R_{15} || R_{17}) || (R_{14} || R_{16})\\ \\
+                    R_{AC} &= \frac{(R_{15} || R_{17}) \cdot (R_{14} || R_{16})}{(R_{15} || R_{17}) + (R_{14} || R_{16})}\\ \\
+                    R_{AC} &= \frac{\left( \frac{R_{15} \cdot R_{17}}{R_{15} + R_{17}}\right) \cdot \left( \frac{R_{14} \cdot R_{16}}{R_{14} + R_{16}}\right)}{\left( \frac{R_{15} \cdot R_{17}}{R_{15} + R_{17}}\right) + \left( \frac{R_{14} \cdot R_{16}}{R_{14} + R_{16}}\right)}\\ \\
+                    R_{AC} &= \frac{\left( \frac{1}{2} \text{ k}\Omega \right) \cdot \left( \frac{1}{2} \text{ k}\Omega \right)}{\left( \frac{1}{2} \text{ k}\Omega \right) + \left( \frac{1}{2} \text{ k}\Omega \right)} = \frac{ \frac{1}{4} \text{ k}\Omega^2}{1 \text{ k}\Omega} = \frac{1}{4}  \text{ k}\Omega \\ \\
+                    \end{align*}
+                    \]
+
+                <li><b>c) Resultierender Widerstand R<sub>AB</sub></b></li>
+
+            </ul>
+
+        <li><b><u>4.5 Pegel-Spannungsteiler (dB)</u></b></li>
+        <p>Formel für den Leistungspegel L<sub>u</sub>:</p>
+        \[
+        \begin{align*}
+        L_u &= 20 \cdot log\left( \frac{U}{U_0} \right)
+        \end{align*}
+        \]
+        <p>Da als Einheit <b>dBu</b> festgelegt ist, ist der Bezugswert U<sub>0</sub> = 0,7746 V</p>
+            <ul><li><b>a) Reduzierte Spannungen U<sub>N</sub></b></li>
+                <table>
+                  <tr>
+                    <th>dBu</th>
+                    <th>U<sub>N</sub> in mV</th>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>773,82617</td>
+                  </tr>
+                  <tr>
+                    <td>-1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-3</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-6</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-10</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-20</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-30</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-40</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-50</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>-60</td>
+                    <td></td>
+                  </tr>
+                </table>
+
+                <li><b>b) Widerstände R<sub>N</sub></b></li>
+
+            
+
+                <li><b>c) U(I) - Kennlinie und Lastgerade</b></li>
+
+
+
+                <li><b>d) Schaltung mit serieller Anordnung</b></li>
+
+            </ul>
+</ul>
+            <p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

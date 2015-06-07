@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>EST Aufgabenblatt 2</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script> <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!--<hr> Horizontale Trennlinie -->
+<!--<ol> (geordnete Liste) <li>Peter</li></ol>-->
+<div class="polka">
+    <h2><u>Elektrotechnik und Systemtheorie Aufgabenblatt 2</u></h2>
+    <p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+<ul>
+        <li><b><u>2.1 Graphen – Signalfunktionen </u></b></li>
+            <p>Für die folgenden Graphen wurde a jeweils gleich 1 gesetzt.</p>
+            <ul>
+            <li><b>a) GS-Anpasssungsprobleme</b></li>
+                <p><figcaption>\( y_1(x) = \frac{1}{1 + ax} \)</figcaption>
+                <img align="centre" src="pic/aufgabe21a1.png" alt="Nüscht"></p>
+                <p><figcaption>\( y_2(x) = \frac{x}{1 + ax} \)</figcaption>
+                <img align="centre" src="pic/aufgabe21a2.png" alt="Jar Nüscht"></p>
+                <p><figcaption>\( y_3(x) = \frac{1}{(1 + ax)^2} \)</figcaption>
+                <img align="centre" src="pic/aufgabe21a3.png" alt="Überhaupt Nüscht"></p>
+                <figcaption>\( y_4(x) = \frac{x}{(1 + ax)^2} \)</figcaption>
+                <img align="centre" src="pic/aufgabe21a4.png" alt="Oh, der Vogl!">
+                
+
+                <li><b>b) Leistungsberechnung von WS und Additionstheoreme</b></li>
+                    <figcaption>\( y_5(t) = \sin^2(\omega t) \)</figcaption>
+                    <img align="centre" src="pic/aufgabe21b1.png" alt="Sinus">
+                    <figcaption>\( y_6(t) = \cos^2(\omega t) \)</figcaption>
+                    <img align="centre" src="pic/aufgabe21b2.png" alt="Kosinus">
+                
+                <li><b>c)  Schalt- und Ausgleichsvorgänge</b></li>
+                    <figcaption>\( y_7(t) = 1- e^{-\left(\frac{t}{T}\right)} \)</figcaption>
+                    <img align="centre" src="pic/aufgabe21c1.png" alt="Dududuuumdumdum">
+                    <figcaption>\( y_8(t) = \sin t \cdot e^{-\left(\frac{t}{T}\right)} \)</figcaption>
+                    <img align="centre" src="pic/aufgabe21c2.png" alt="Lol Rofl etc.">
+                <li><b>d) Definitionen von Testsignalen</b></li>
+                    <img align="centre" src="pic/aufgabe21d.png" alt="Damdamdaaaam">
+                    <figcaption> 
+                        \[
+                        \sigma (t) = \begin{cases}
+                            0,  & \text{fuer } t < 0 \\
+                            1, & \text{fuer } t \ge 0
+                        \end{cases}, \text{ } \delta (t) = \frac{d \sigma (t)}{dt}, \text{ } rect(t) = \begin{cases}
+                            0,  & \text{fuer } |t| \le \frac{1}{2} \\
+                            1, & \text{fuer } |t| > \frac{1}{2}
+                        \end{cases}
+                    \]
+                    </figcaption>
+                </ul>
+        <li><b><u>2.5 Gleich- und Wechselstrom, Primär- und Sekundärzellen </u></b></li>
+            <ul><li><b>b) Wissenschaftliche Veröffentlichungen zum Thema Energy Harvesting</b></li>
+                <ul>
+                    <li><b>Autor:</b> Klaus Dembowski</li>
+                    <li><b>Name:</b> Energy Harvester zur netzunabhängigen Stromversorgung (Veröffentlicht am 11.07.2011)</li>
+                    <li><b>URL:</b> <a href="http://www.elektroniknet.de/power/energiespeicher/artikel/80438/0/">http://www.elektroniknet.de/power/energiespeicher/artikel/80438/0/</a> (Aufgerufen am 10.05.2015)</li>
+                </ul>
+                <p>Beim Energy Harvesting handelt es sich um die Gewinnung kleiner Strommengen durch Alltagsaktivitäten, um damit kleine unabhängige Geräte autark, also ohne Batterien betreiben zu können. Dabei geht es um Stromgewinn aus Bewegungen wie Vibration, oder aus Temperaturunterschieden. Dazu angewandte Technologien sind z.B. im Akustik- und Vibrationsberich Piezoelektrische Kristalle, im Temperaturbereich Thermogeneratoren und beim Luftstrom Strömungswandler.</p>
+                <p>Thermogeneratoren bringen laut Artikel eine hohe Leistung (60 -710 &micro;Watt pro cm<sup>2</sup>). Sie nutzen den sog. Seebeck-Effekt, bei dem durch Temperaturunterschiede geringe Spannungen aufgebaut werden. Es gibt auch schon einige Generatoren auf dem Markt, laut Autor gäbe es aber noch "Forschungsbedarf"</p>
+                <p>Eine weitere Technologie ist der elektrodynamische Wandler. Durch elektrische Induktion wird hier Strom erzeugt. Verwendung findet er in Schaltern, welche so keine Kabel mehr benötigen und sich flexibler an- und abbauen lassen.</p>
+                <p>Als nächstes behandelt der Artikel Piezo-Wandler. Diese nutzen durch Vibrationen oder Krafteinwirkungen erzeugte Spannungen zur Stromerzeugung. Allerdings muss dieser erst umgewandelt werden, um für Geräte nutzbar zu sein</p>
+                <p>Ein laut Artikel relativ neues Forschungsgebiet ist die Energiegewinnung aus elektromagnetischen Feldern: RF Energy Harvesting. RF steht dabei für Radio Frequncy. D.h. es wird versucht aus Funkwellen und den daraus resultierenden Feldern Strom zu erzeugen. Es soll allerdings noch nicht wirklich effizient sein, da solche Wellen meist Ortsabhängig sind.</p>
+
+                <ul>
+                    <li><b>Autor:</b> Denise Bergert</li>
+                    <li><b>Name:</b> Smarter Stoff macht Reibungsenergie nutzbar (Veröffentlicht am 14.04.2015 19:38)</li>
+                    <li><b>URL:</b> <a href="http://www.heise.de/newsticker/meldung/Smarter-Stoff-macht-Reibungsenergie-nutzbar-2606533.html">http://www.heise.de/newsticker/meldung/Smarter-Stoff-macht-Reibungsenergie-nutzbar-2606533.html</a> (Aufgerufen am 10.05.2015)</li>
+                    <li>Verweis auf <a href="http://pubs.acs.org/doi/abs/10.1021/nn507221f?source=cen&">ACS Publications: Nanopatterned Textile-Based Wearable Triboelectric Nanogenerator</a> von Wanchul Seung, Manoj Kumar Gupta, Keun Young Lee, Kyung-Sik Shin, Ju-Hyuck Lee, Tae Yun Kim, Sanghyun Kim, Jianjian Lin, Jung Ho Kim, and Sang-Woo Kim</li>
+                </ul>
+                <p>Dem Artikel nach haben südkoreanische Wissenschaftler einen Stoff entwickelt, welcher durch Reibung erzeugte Energie speichern und nutzen kann. Der Stoff besteht aus zwei verschiedenen Gewebeschichten. Die Ausbeute seien, laut eines Infopapieres (ober verlinkt), eine Spannung von 120 bis 170 Volt und 65 bis 120 &micro;Ampere Strom. Dies reiche um 6 LEDs, einen kleinen LCD-Bildschirm oder einen schlüssellosen Öffnungsmechanismus zu bedienen, mehr allerdings auch nicht. </p>
+
+                <ul>
+                    <li><b>Autor:</b> Andreas Menn</li>
+                    <li><b>Name:</b> Strom ernten (Veröffentlicht am 27. August 2011 in der Wirtschafts Woche)</li>
+                    <li><b>URL:</b> <a href="http://www.wiwo.de/technologie/energie-strom-ernten/5212420.html">http://www.wiwo.de/technologie/energie-strom-ernten/5212420.html</a> (Aufgerufen am 10.05.2015)</li>
+                </ul>
+                <p>Der Artikel behandelt verschiedene Foren des Energy Harvesting. So die Energiegewinnung schwimmender Drohnen durch Wellen. Dabei wird genug Energie erzeugt um die Drohne in eine beliebige Richtung fahren zulassen. Verschiedenste Sensoren erzeugen die von ihne benötigte Energie aus Vibration, Luftströme und dem schon erwähnten Seebeck-Effekt. Effiente Energiegewinnung aus der Umwelt ist ein wichtiges Thema, in dem sehr viel geforscht wird. So erzeugen Hybridautos Strom aus der Bremsenergie und den Bewegungen von Stoßdämpfern. Herzschrittmacher sollen durch im Körper erzeugte Energien versorgt werden, um Batterieaustausch und so anfallende Operationen zu vermeiden. Allerdings sei die Technik noch sehr weit davon entfernt, wirklich große Geräte betreiben zukönnen.</p>
+
+                <ul>
+                    <li><b>Autor:</b> Holger Dambeck</li>
+                    <li><b>Name:</b> Energie aus Vibrationen: Herzschläge sollen Strom für Schrittmacher liefern (Veröffentlicht am 05.03.2012 – 09:01 Uhr)</li>
+                    <li><b>URL:</b> <a href="http://www.spiegel.de/wissenschaft/medizin/energie-aus-vibrationen-herzschlaege-sollen-strom-fuer-schrittmacher-liefern-a-819202.html">http://www.spiegel.de/wissenschaft/medizin/energie-aus-vibrationen-herzschlaege-sollen-strom-fuer-schrittmacher-liefern-a-819202.html</a> (Aufgerufen am 10.05.2015)</li>
+                </ul>
+                <p>Der Artikel beschäftigt sich vorallem um ein Projekt der University of Michigan, einen autarken Herzschrittmacher zukonzipieren. Hierbei gehe es um Energiegewinnung aus der Vibration des Herzschlags. Dadurch könne man sich die regelmäßigen Operationen auf Grund des Batterieaustauschs. Allerdings sei noch kein Prototyp in der Entwicklung, da man erst durch Simulationen herausfinden wolle, ob die erzeugte Energie ausreiche. </p>
+
+                <ul>
+                    <li><b>Autor:</b> Dhananjay Khadilkar | </li>
+                    <li><b>Name:</b> Energy-Harvesting Street Tiles Generate Power from Pavement Pounder (Veröffentlicht am 20. April 2013)</li>
+                    <li><b>URL:</b> <a href="http://www.scientificamerican.com/article/pavement-pounders-at-paris-marathon-generate-power/">http://www.scientificamerican.com/article/pavement-pounders-at-paris-marathon-generate-power/</a> (Aufgerufen am 10.05.2015)</li>
+                </ul>
+                <p>Durch den Einsatz von speziellen Bodenplatten, wurde beim Marathon in Parsi 2013 Energie durch die Läufer selbst erzeugt. Dabei handelte es sich laut Artikel um bis zu 4,7 kWh, genug um eine LED 40 Tage lang mit Strom zuversorgen. Die Bodenplatten bestehen zu Teil aus piezoelektrischen Materialien und Induktion. Durch den Auftritt eines einzelnen Fußes, sollen auf 7 mm<sup>2</sup> dieser Bodenplatten 1 bis 7 Watt erzeugt werden. Probem seien allerdings die Verlegung solcher Platten, da diese Wetterresistent und Ausdauernd sein müssten und unter Umständen Vandalismus zum Opfer fallen könnten. Trotzdem sagt der Hersteller, dass in naher Zukunft diese Bodenplatten in mehreren Bereichen eingesetzt werden würden.</p>
+
+            <li><b>c) Primär- und Sekundärelemente</b></li>
+            <p><b>Primärzellen „Batterie“ (z. B. Alkali-Mangan)</b></p>
+                <table>
+                    <tr>
+                        <th>Bauform</th>
+                        <th>Abmessung</th>
+                        <th>Spannung <br>(Volt V)</th>
+                        <th>Ladungsmenge <br>(Amperestunden Ah)</th>
+                        <th>Energie<br>(Wattstunde Wh)</th>
+                        <th>Energiedichte<br>Wh/kg</th>
+                        <th>Preis ca.<br>(Euro &euro;)</th>
+                        <th>Preis/Wh<br>(Euro &euro;)</th>
+                        <th>(Preis/Wh) Preis<br>Haushaltsstrom (Wh)</th>
+                  </tr>
+                  <tr>
+                        <td>AAAA</td>
+                        <td>42,5 mm × Ø 8,3 mm</td>
+                        <td>1,5</td>
+                        <td>0,3 - 0,6</td>
+                        <td>0,45 - 0,9</td>
+                        <td>75 - 150</td>
+                        <td>0,27</td>
+                        <td>0,6 - 0,3</td>
+                        <td>2076 - 1038</td>
+                    </tr>
+                    <tr>
+                        <td>AAA</td>
+                        <td>44,5 mm × Ø 10,5 mm</td>
+                        <td>1,5</td>
+                        <td>1,2</td>
+                        <td>1,8</td>
+                        <td>120</td>
+                        <td>0,27</td>
+                        <td>0,15</td>
+                        <td>503</td>
+                    </tr>
+                    <tr>
+                        <td>AA</td>
+                        <td>50,5 mm × Ø 14,5 mm</td>
+                        <td>1,5</td>
+                        <td>2,3</td>
+                        <td>3,45</td>
+                        <td>115</td>
+                        <td>0,30</td>
+                        <td>0,087</td>
+                        <td>301</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td> 50 mm × Ø 26 mm</td>
+                        <td>1,5</td>
+                        <td>8,0</td>
+                        <td>12</td>
+                        <td>173,91</td>
+                        <td>0,42</td>
+                        <td>0,035</td>
+                        <td>121</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td> 61 mm × Ø 34 mm</td>
+                        <td>1,5</td>
+                        <td>18,0</td>
+                        <td>27,0</td>
+                        <td>187,5</td>
+                        <td>0,42</td>
+                        <td>0,0156</td>
+                        <td>53,8</td>
+                    </tr>
+                    <tr>
+                        <td>N</td>
+                        <td>30 mm × Ø 12 mm</td>
+                        <td>1,5</td>
+                        <td>0,8</td>
+                        <td>1,2</td>
+                        <td>26,67</td>
+                        <td>0,30</td>
+                        <td>0,25</td>
+                        <td>865</td>
+                    </tr>
+                    <tr>
+                        <td>1604D</td>
+                        <td>48,5 × 26,2 × 17</td>
+                        <td>9</td>
+                        <td>0,6</td>
+                        <td>5,4</td>
+                        <td>117,39</td>
+                        <td>0,98</td>
+                        <td>0,181</td>
+                        <td>628</td>
+                    </tr>
+                </table>
+                <p>Preis für Haushaltstrom laut <a href="http://www.kwh-preis.de/strom/strompreise">kwh-preis.de</a></p>
+<br>
+                <p><b>Sekundärzellen „Akkumulatoren“ (z. B. NiMH)</b></p>
+                <table>
+                    <tr>
+                        <th>Bauform</th>
+                        <th>Abmessung</th>
+                        <th>Spannung <br>V</th>
+                        <th>Ladungsmenge <br>Ah</th>
+                        <th>Energie<br>Wh</th>
+                        <th>Energiedichte<br>Wh/kg</th>
+                        <th>Preis ca.<br>Eu</th>
+                        <th>Preis/Wh<br>Eu</th>
+                        <th>(Preis/Wh) Preis<br>Haushaltsstrom (Wh)</th>
+                  </tr>
+                  <tr>
+                        <td>AAAA</td>
+                        <td>42,5 mm × Ø 8,3 mm</td>
+                        <td>1,2</td>
+                        <td>0,3</td>
+                        <td>0,36</td>
+                        <td>60</td>
+                        <td>1,03</td>
+                        <td>2,861</td>
+                        <td>9900</td>
+                    </tr>
+                    <tr>
+                        <td>AAA</td>
+                        <td>44,5 mm × Ø 10,5 mm</td>
+                        <td>1,2</td>
+                        <td>1,0</td>
+                        <td>1,2</td>
+                        <td>80</td>
+                        <td>1,37</td>
+                        <td>1,14</td>
+                        <td>3945</td>
+                    </tr>
+                    <tr>
+                        <td>AA</td>
+                        <td>50,5 mm × Ø 14,5 mm</td>
+                        <td>1,2</td>
+                        <td>2,5</td>
+                        <td>3,0</td>
+                        <td>100</td>
+                        <td>1.87</td>
+                        <td>0,623</td>
+                        <td>2157</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td> 50 mm × Ø 26 mm</td>
+                        <td>1,2</td>
+                        <td>4,5</td>
+                        <td>5,4</td>
+                        <td>78,26</td>
+                        <td>3.92</td>
+                        <td>0,726</td>
+                        <td>2436</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td> 61 mm × Ø 34 mm</td>
+                        <td>1,2</td>
+                        <td>12,0</td>
+                        <td>14,4</td>
+                        <td>100</td>
+                        <td>3.92</td>
+                        <td>0,272</td>
+                        <td>942</td>
+                    </tr>
+                    <tr>
+                        <td>N</td>
+                        <td>30 mm × Ø 12 mm</td>
+                        <td>1,2</td>
+                        <td>0,5</td>
+                        <td>0,6</td>
+                        <td>13,33</td>
+                        <td>3,00</td>
+                        <td>5,00</td>
+                        <td>17301</td>
+                    </tr>
+                </table>
+                <p>Preis für Haushaltstrom laut <a href="http://www.kwh-preis.de/strom/strompreise">kwh-preis.de</a></p>
+                <p>Zwar sind Akkumulatoren im Schnitt ein ganzes Stück teurer also Batterien, unter ökologischen Aspekten lohnt es sich trotzdem eher Akkumulatoren zu kaufen. Die durchschnittliche Lebensdauer von Akkus beträgt zwischen 7-10 Jahren, je nach Benutzung und Ladehäufigket. Das ist definitiv umweltschonender als regelmäßig normale Batterien zu kaufen und diese anschließend zu entsorgen. Es gelangen auch leider viele Batterien in die Umwelt, welche durch die sehr giftigen Inhaltsstoffe der Zellen geschädigt wird.</p>
+                <p><b>Fazit:</b> Um die Umwelt zu schonen sollte man eher auf wiederaufladbare Akkumulatoren zurückgreifen.</p>
+                <span class="quelle"><p>(Quelle: Akku-Abc.de - <a href="http://www.akku-abc.de/akku-lebensdauer.php">Akku Lebensdauer</a></p></span>
+            </ul>
+</ul>
+            <p><a href="elektrotechnik.html">Zurück zur Aufgabenübersicht</a></p>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

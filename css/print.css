@@ -1,0 +1,98 @@
+html {
+	background-color: #FFFFFF  ; /*#ECD9B1*/
+	color: #000000 ;
+	font-size: 20px;
+	/*font-family: Century Gothic, sans-serif;*/
+	font-family: Open Sans, sans-serif;
+	font-weight: 400;
+	line-height: 1.5; /*Kommentar*/
+
+}
+
+h1,h2,h3,h4,h5,h6,b{
+	font-weight: 700;
+}
+
+.centre {
+	display: block;
+	margin: 0 auto;
+
+
+
+}
+
+.content {
+	width: 700px;
+	margin: 50px auto	;
+	/*background-color: #FF8E7A*/  ;
+}
+
+.polka {
+	width: 700px;
+	margin: 50px auto	;
+	font-size: 16px ;
+	/*background-color: #FFCBA6*/ ;
+}
+
+.header {
+	width: 900px;
+	margin: 100px auto;
+	margin-top: 50px;
+
+}
+
+.quelle {
+	font-size: 10px;
+
+
+}
+
+/*.colorcp {
+	background-color: #FFB1B1 ;
+}
+
+.colorvr {
+	background-color: #FDDAB2 ;
+}
+
+.colorht {
+	background-color: #FCF8B1 ;
+}
+
+.colorgp {
+	background-color: #C0FFAA ;
+}
+
+.colorbsn {
+	background-color: #BAB2FF ;
+}
+
+.colorpsn {
+	background-color: #E9B3FF ;
+}
+
+.colorchs {
+	background-color: #C4C4C4 ;
+}
+
+.colorps {
+	background-color: #E4E4E4 ;
+}
+
+.colorst {
+	background-color: #B3FFFD ;
+}*/
+
+table {
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 3px;
+}
+
+.tests {
+	background-color: #FFFFFF ;
+	font-family: Courier New, serif ;
+}

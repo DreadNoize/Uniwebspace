@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>IC Aufgabenblatt 6</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML-HTMLorMML" defer></script>
+        <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+
+</head>
+	<div class="polka">
+		<h2><u>Information und Codierung Aufgabenblatt 6</u></h2>
+			<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+			<ul>
+			<li><b><u>6.4 - Huffman-Code: indietro, en arrière, reversed, atrás, 倒, обра́тно </u></b></li>
+				<ul>
+					<li><b>a) Huffmann-Baum</b></li>
+
+                    <pre><code>e 17,40------\0
+i 7,55\0      >32,22---------------------------------------------\
+       >14,82/1                                                   \
+s 7,27/1                                                           \
+b 1,89\0                                                            \
+       >3,78----------------------------------\                      \
+w 1,89/1                                       \                      \
+v 0,67-------------------\0                     \0                     \
+j 0,27-------------\0     >1,03\                 >7,26\0                \0
+x 0,03\0            >0,36/1     \0              /1     >14,26\           >59,49\0
+       >0,05\0     /1            >1,82\        /      /1      \         /1      >100
+q 0,02/1     >0,09/             /1     \0     /      /         \0      /       /1
+y 0,04------/1                 /        >3,48/      /           >27,27/       /
+p 0,79------------------------/        /1          /           /1            /
+f 1,66--------------------------------/           /           /             /
+r 7,00-------------------------------------------/           /             /
+a 6,51------\0                                              /             /
+l 3,44\0     >13,01----------------------------------------/             /
+       >6,50/1                                                          /
+c 3,06/1                                                               /
+t 6,15------\0                                                        /
+g 3,01\0     >11,69-----\                                            /
+       >5,54/1           \0                                         /
+m 2,53/1                  >21,62\0                                 /
+d 5,08------------\0     /1      >40,51---------------------------/
+o 2,51------\0     >9,93/       /1
+k 1,21\0     >4,85/1           /
+       >2,34/1                /
+z 1,13/1                     /
+n 9,78------\0              /
+h 4,76\0     >18,89--------/
+       >9,11/1
+u 4,35/1</code></pre>
+                    <p>Fängt man nun bei der 100 an und fährt alle Pfade ab, bekommt man nun die Huffmancodierung jedes einzelnen Buchstabens. Zur Übersicht sind diese in der folgenden Tabelle aufgelistet (nach Wahrscheinlichkeit sortiert).</p>
+                    <table>
+                        <tr>
+                            <th><b>Buchstabe</b></th>
+                            <th><b>Binärcodierung</b></th>
+                        </tr>
+                        <tr>
+                            <td>e</td>
+                            <td>000</td>
+                        </tr>
+                        <tr>
+                            <td>n</td>
+                            <td>110</td>
+                        </tr>
+                        <tr>
+                            <td>i</td>
+                            <td>0010</td>
+                        </tr>
+                        <tr>
+                            <td>s</td>
+                            <td>0011</td>
+                        </tr>
+                        <tr>
+                            <td>r</td>
+                            <td>0101</td>
+                        </tr>
+                        <tr>
+                            <td>a</td>
+                            <td>0110</td>
+                        </tr>
+                        <tr>
+                            <td>t</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>d</td>
+                            <td>1010</td>
+                        </tr>
+                        <tr>
+                            <td>h</td>
+                            <td>1110</td>
+                        </tr>
+                        <tr>
+                            <td>u</td>
+                            <td>1111</td>
+                        </tr>
+                        <tr>
+                            <td>l</td>
+                            <td>01110</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td>01111</td>
+                        </tr>
+                        <tr>
+                            <td>g</td>
+                            <td>10010</td>
+                        </tr>
+                        <tr>
+                            <td>m</td>
+                            <td>10011</td>
+                        </tr>
+                        <tr>
+                            <td>o</td>
+                            <td>10110</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>010000</td>
+                        </tr>
+                        <tr>
+                            <td>w</td>
+                            <td>010001</td>
+                        </tr>
+                        <tr>
+                            <td>f</td>
+                            <td>010011</td>
+                        </tr>
+                        <tr>
+                            <td>k</td>
+                            <td>101110</td>
+                        </tr>
+                        <tr>
+                            <td>z</td>
+                            <td>101111</td>
+                        </tr>
+                        <tr>
+                            <td>p</td>
+                            <td>0100101</td>
+                        </tr>
+                        <tr>
+                            <td>v</td>
+                            <td>01001000</td>
+                        </tr>
+                        <tr>
+                            <td>j</td>
+                            <td>010010010</td>
+                        </tr><tr>
+                            <td>y</td>
+                            <td>0100100111</td>
+                        </tr>
+                        <tr>
+                            <td>x</td>
+                            <td>01001001100</td>
+                        </tr>
+                        <tr>
+                            <td>q</td>
+                            <td>01001001101</td>
+                        </tr>
+
+                    </table>
+                    <p></p>
+					<li><b>b) Dekodieren des Bitstroms</b></li>
+                    <p>Der zu dechiffrierenden Code lautet:</p>
+
+                    <b>00101100100111011001011001101101000001010110110</b>
+
+                    <p>Mit der obigen Tabelle können wir nun Schritt für Schritt, den Code entschlüsseln.</p>
+                    <table>
+                        <tr>
+                            <th><b>Code</b></th>
+                            <th> 0010 </th>
+                            <th> 110 </th>
+                            <th> 010011 </th>
+                            <th> 10110 </th>
+                            <th> 0101 </th>
+                            <th> 10011 </th>
+                            <th> 0110 </th>
+                            <th> 1000 </th>
+                            <th> 0010 </th>
+                            <th> 10110 </th>
+                            <th> 110</th>
+                        </tr>
+                        <tr>
+                            <td><b>Buchstaben</b></td>
+                            <td>i</td>
+                            <td>n</td>
+                            <td>f</td>
+                            <td>o</td>
+                            <td>r</td>
+                            <td>m</td>
+                            <td>a</td>
+                            <td>t</td>
+                            <td>i</td>
+                            <td>o</td>
+                            <td>n</td>
+                        </tr>
+                    </table>
+                    <p>Das Codewort lautet also: <b>information</b>.</p>
+				</ul>
+			</ul>
+
+			<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+
+	</div>
+</body>
+</html>

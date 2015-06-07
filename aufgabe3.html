@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>IC Aufgabenblatt 3</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+    <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<div class="polka">
+	<h2><u>Information und Codierung Aufgabenblatt 3</u></h2>
+	<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+	<ul>
+
+		<li><b><u>3.2 - Akustische Signale</u></b></li>
+
+			<ul>
+				<li><b>a) Darstellung der Frquenzen von zwei Oktaven (c bis c")</b></li>
+				<p>
+					In der Musik teilt man Oktaven in Cent ein. So ist eine Oktave 1200 Cent groß. d.h. zwischen den Halbtönen ist jeweils 100 Cent Abstand. Will man nun die Frequenz eines Tons berechenen braucht man die Formel:
+					\[
+					f = \sqrt[1200]{2^n} \cdot f_a
+					\]
+					\(f_a\) stellt dabei die Frequenz des Tones a da, welche 220 Hz beträgt. Für \(n\) setzt man nun den Abstand zwischen a und dem zuberechnenden Ton in Cent ein.
+					\[
+					\begin{align*}
+					f_c &= \sqrt[1200]{2^{(-900)}} \cdot 220 \texttt{ Hz} = 130,8128 \texttt{ Hz} \\
+					f_d &= \sqrt[1200]{2^{(-700)}} \cdot 220 \texttt{ Hz} = 146,8324 \texttt{ Hz} \\
+					f_e &= \sqrt[1200]{2^{(-500)}} \cdot 220 \texttt{ Hz} = 164,8138 \texttt{ Hz} \\
+					f_f &= \sqrt[1200]{2^{(-400)}} \cdot 220 \texttt{ Hz} = 174,6141 \texttt{ Hz} \\
+					f_g &= \sqrt[1200]{2^{(-200)}} \cdot 220 \texttt{ Hz} = 195,9977 \texttt{ Hz} \\
+					f_a &= \sqrt[1200]{2^{0}} \cdot 220 \texttt{ Hz} = 220,0000 \texttt{ Hz} \\
+					f_h &= \sqrt[1200]{2^{200}} \cdot 220 \texttt{ Hz} = 246,9417 \texttt{ Hz} \\
+					f_{c'} &= \sqrt[1200]{2^{300}} \cdot 220 \texttt{ Hz} = 261,6256 \texttt{ Hz} \\
+					f_{d'} &= \sqrt[1200]{2^{500}} \cdot 220 \texttt{ Hz} = 293.6648 \texttt{ Hz} \\
+					f_{e'} &= \sqrt[1200]{2^{700}} \cdot 220 \texttt{ Hz} = 329,6276 \texttt{ Hz} \\
+					f_{f'} &= \sqrt[1200]{2^{800}} \cdot 220 \texttt{ Hz} = 349,2282 \texttt{ Hz} \\
+					f_{g'} &= \sqrt[1200]{2^{1000}} \cdot 220 \texttt{ Hz} = 391,9954 \texttt{ Hz} \\
+					f_{a'} &= \sqrt[1200]{2^{1200}} \cdot 220 \texttt{ Hz} = 440,0000 \texttt{ Hz} \\
+					f_{h'} &= \sqrt[1200]{2^{1400}} \cdot 220 \texttt{ Hz} = 493,8833 \texttt{ Hz} \\
+					f_{c"} &= \sqrt[1200]{2^{1500}} \cdot 220 \texttt{ Hz} = 523,2511 \texttt{ Hz} \\
+					\end{align*}
+					\]
+				</p>
+				<img class="centre" src="pic/Also_so_geht_das.png" alt="Ja Richtig!">
+				<p>Die Frequenzen als linearer Graph, geplottet mit <a href="http://itools.subhashbose.com/maths/Grapher.html">Grapher</a></p>
+				<img class="centre" src="pic/Also_so_geht_das_logarithmisch.png" alt="Jetzt tu mal nich so scheinheilig!">
+				<p>Und das Ganze noch mal als logarithmischer Graph (logarithmische Y-Achse), ebenfalls geplottet mit <a href="http://itools.subhashbose.com/maths/Grapher.html">Grapher</a></p>
+
+			</ul>
+
+		<li><b><u>3.3 - Optische Signale</u></b></li>
+
+			<ul>
+				<li><b>b) Fresnel-Zonenplatte</b></li>
+					<p>
+					Bei Zonenplatten wird mit Hilfe von in konzentrischen Kreisen angelegten und sich abwechselnden transparenten und getrübten Zonen (den sog. Fresnel-Zonen) Licht fokusiert. Dabei wird das Licht gebeugt und nicht gebrochen. Durch Veränderung der Zonen kann man durch Interferenz bestimmte Welenlängen in einem Brennpunkt fokusieren.
+					</p>
+					<span class="quelle">(Quelle: <a href="http://de.wikipedia.org/wiki/Fresnel-Zonenplatte">Fresnel-Zonenplatte</a>) </span>
+
+					<p>
+					<figure>
+					<img src="pic/fresnel.gif" alt="Fresnel"> <img src="pic/fresnelklein.gif" alt="Verkleinerter Fresnel"> <img src="pic/fresneldist.gif" alt="Wieder vergrößerter Fresnel">
+					<figcaption> <b>1:</b> Orginal, <b>2:</b> Das Original auf 50x50 Pixel skaliert, <b>3:</b> Zurück in Orginalgröße gesetzte Verkleinerung
+					</figcaption>
+					</figure>
+					</p>
+
+					<p>
+					Die Bilderserie zeigt eine Fresnel-Zonenplatte, welche erst auf 50 x 50 Pixel skaliert und dann in Orginalgröße zurückversetzt wurde. Bei der Verkleinerung um 75 % gehen auch 75 % der Pixel verloren. Bei der Vergrößerung fehlen diese 75 %. Diese fehelenden Stellen werden nun mit den Farben der noch übrigen Pixel wieder aufgefüllt. So erscheinen im rexhten Bild die Pixel größer.
+					</p>
+					<p>
+					Um es mit dem Abtasttheorem zu beschreiben: das Orginal wird bei der Verkleinerung mit einer Abtastfrequenz von 50 Pixeln abgetastet. Es wird also nur jeder 4. Pixel erfasst. Die verkleinerung hat also nur \(\frac{1}{4}\) der Menge der Pixel des Orginals. Dies wird als Alias-Effekt bezeichnet. Wird diese Verkleinerung wieder mit 200 Pixeln abgetastet, haben 4 Pixel in Folge den selben Wert. Das erklärt, warum das nun neu entstandene Bild "verpixelt" wirkt.
+					</p>
+			</ul>
+
+		<li><b><u>3.4 - Mediendateien</u></b></li>
+
+			<ul>
+				<li><b>a)Sonagramm/Spektogramm</b></li>
+				<p>
+				<audio src="aud/joachim-billert.wav" controls></audio>
+				</p>
+				<p>Die Orginal Datei, einfach nochmal zur Erinnerung.</p>
+					<img class="centre" src="pic/is_it_a_wave__no_its_a_jpg.jpg" alt="Mach das ma so">
+					<p>Der Zeitverlauf der unkomprimierte Datei</p>
+					<img class="centre" src="pic/such_spektogramm.jpg" alt="Woohoo!">
+					<p>Spektogramm der oberen Audiodatei.</p>
+					<img class="centre" src="pic/such_spektogramm_log.jpg" alt="See ya!">
+					<p>Logarithmisches Spektogramm der oberen Audiodatei.</p>
+				<p>
+				<audio src="aud/joachim-billert-reverse.wav" controls></audio>
+				</p>
+				<p>Die Datei rückwärts.</p>
+				<li><b>b)Dateimanipulationen via Hexeditor</b></li>
+				<ul>
+					<li>Metadaten</li>
+					<p>Öffnet man eine Audiodatei in einem Hexeditor, sieht man, dass im Hexcode auch Metadaten , also Informationen über Interpreten, Albumname, Dateiname, Jahr usw. gespeichert sind.</p>
+					<img class="centre" src="pic/metadaten.jpg" alt="Metadaten halt">
+					<p>Im oberen Bild ist ein Beispiel für Metadaten. Ich verwendete dafür das Lied <i>Boreals</i> von <a href="http://auditiveescape.bandcamp.com/">Auditive Escape</a> aus dem Album <i>Curves</i>. Wie man sieht sind Titel, Album, Interpret und das Album-Cover als Metadaten gespeichert.
+					</p>
+				</ul>
+
+
+				<p>
+					Öffnet man die konvertierte Ogg-Datei in einem Hexeditor (in meinem Fall war es der auf HTML5/JavaScript-basierende <a href="http://hexed.it">HexEdit.js</a> von <a href="http://www.duttke.de/">Jens Duttke</a>) erhält man folgendes Bild:
+				</p>
+					<img class="centre" src="pic/oh_my_god_its_an_ogg_file_as_a_hexcode.jpg" alt="Weißte bescheid!">
+
+				<p>
+					Dabei stellen die markierten 58 Byte den Header dar. Die Bytes im Header sagen z.B. etwas darüber aus, um welchen Dateityp es sich handelt (in diesem Fall ".ogg"). Der konkrete Aufbau (nach: <a href="https://en.wikipedia.org/wiki/Ogg#Page_structure">Ogg# page structures</a>) ist folgender:
+				</p>
+					<img class="centre" src="pic/is_this_a_header.jpg" alt="Yes, it is!">
+					<p class="colorcp"> Capture Pattern</p>
+					<p> Der Capture Pattern zeigt an, um welche Datei es sich handelt. Bei Ogg ist er immer 4F 67 67 53 (OggS). Er steht bei jeder Seite (page) am Anfang.</p>
+					<p class="colorvr"> Version</p>
+					<p> Der Versionsabschnitt zeigt die Version des Bitstreams an und liegt bei Ogg immer bei 00.</p>
+					<p class="colorht"> Header Type</p>
+					<p>Der Header Type zeigt, ob es sich bei der Seite um den Anfang (02), das Ende (03) oder eine Fortsetzung (00) des Streams ist.</p>
+					<p class="colorgp"> Granule Position</p>
+					<p>In diesem Abschnitt wird gezeigt wieviel Samples die seite hat.</p>
+					<p class="colorbsn"> Bitstream Serial Number</p>
+					<p>Die Bitstream Serial Number spezifiziert den Bitstream.</p>
+					<p class="colorpsn"> Page Sequence Number</p>
+					<p>Die Page Sequence Number vergibt an jede Seite eine Nummer. Dabei geht es bei der ersten Seite mit 0 los usw.</p>
+					<p class="colorchs"> Checksum</p>
+					<p>Die Checksum ist eine Prüfsumme, welche testet, ob die Datei in Ordnung ist.</p>
+					<p class="colorps"> Page segments</p>
+					<p>Hier wird die Anzahl der Segmente festgellegt die im nächsten Abschnitt auftauchen sollen.</p>
+					<p class="colorst"> Segment table</p>
+					<p>Hier wird über die Größe der einzelnen Segment auskunft gegeben.</p>
+
+
+
+				<p>
+					Um aus der ".ogg"-Datei eine Bitmapdatei zu machen, muss an den Ogg-Header mit einem geeigneten Bitmap-Header austauschen. Dafür hab ich mit einem Bildbearbeitungsprogramm (in meinem Fall war es Paint) eine weiße Bitmapdatei erstellt, deren Dateigröße \(\le \) der Dateigröße des zu konvertierenden Ogg-Files ist.
+				</p>
+					<img class="centre" src="pic/eine_schoene_weisse_bitmap.jpg" alt="Hans Klos">
+				<p>
+					Auch hier ist der Header farblicher hervorgehoben. Nun hieß es, Ogg-Header löschen und den Bitmap-Header einfügen.
+				</p>
+				<figure>
+					<figcaption><b>1.</b> Ogg-Header entfernen</figcaption>					                       <img class="centre" src="pic/erase_all_the_bytes.jpg" alt="Smok Wawelski">
+					<figcaption><b>2.</b> Bytes für BMP-Header einfügen</figcaption>
+					<img class="centre" src="pic/you_are_not_adding_any_bytes_are_you.jpg" alt="Bolek i Lolek">
+					<figcaption><b>3.</b> BMP-Header übertragen</figcaption>
+					<img class="centre" src="pic/so_you_did_it_congratz.jpg" alt="Reksio">
+					<figcaption><b>4.</b> Metadaten für Dateigröße anpassen</figcaption>
+					<figcaption><b>5.</b> Datei exportieren und als Bitmap speichern</figcaption>
+					<figcaption><b>6.</b> Voilà:</figcaption>
+				</figure>
+
+				<figure>
+				<img src="pic/rise_and_shine_mr_freeman.bmp" alt="Ogg to BMP conversion">
+				<img src="pic/rise_and_shine.jpg" alt="BMP to JPG">
+				<figcaption><b>Links:</b> Die Ogg-Audiodatei als Bitmap, <b>rechts:</b> Das Bild nochmal als skaliertes JPG</figcaption>
+				</figure>
+
+				<li><b>c) Umwandlung einer Bilddatei in eine Audiodatei</b></li>
+				<p>
+					Beim Umwandlungsvorgang einer Bilddatei in eine Audiodatei, geht man im Grunde wie oben vor.
+					Der Unterschied liegt darin, dass man in diesem Beispiel (JPG zu WAV), den JPG-Header nicht entfernen muss, sondern den WAV-Header einfach vor den JPG-Header legt.
+				</p>
+				<img class="centre" src="pic/kaese_brot_ist_ein_gutes_brot.jpg" alt="Oh du mein Super-Sexy-Käsebrot!">
+				<p><b>Links:</b> Die unten abspielbare JPG-Datei, <b>Rechts:</b> Der WAV-Header.</p>
+				<p>
+				Bitte beim Abspielen den Lautstärkeregler runterstellen. Könnte unter Umständen laut werden.
+				</p>
+				<p>
+					<audio src="aud/bild3.wav" controls></audio>
+				</p>
+			</ul>
+			<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+
+	</ul>
+</div>
+<body>
+
+</body>
+</html>

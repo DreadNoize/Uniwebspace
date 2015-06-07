@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>IC Aufgabenblatt 4</title>
+
+    <link rel="stylesheet" href="css/peter.css">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+    <!--Nur auf Seiten wo man Mathe braucht!YO!-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<div class="polka">
+	<h2><u>Information und Codierung Aufgabenblatt 4</u></h2>
+	<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+	<ul>
+
+		<li><b><u>4.1 - Evaluierung des E-Learning Systems</u></b></li>
+
+			<ul>
+				<li><b>a) Zeitaufwand</b></li>
+					<p>Für das E-Learning brauchte ich mit Nacharbeiten undgefähr einen Abend. Vom Zeitaufwand her liegt es schon in der Zeit einer Vorlesung, auch hier mit Nacharbeitung.</p>
+				<li><b>b) Probleme</b></li>
+					<p>Das größte Problem war, sich überhaupt dazu aufzuraffen, den Stoff selbst durchzuarbeiten. Man schiebt es vor sich hin solange man kann. Das ist der große Unterschied zur Vorlesung. Ist man erstmal dort kann man sich Stoff nicht wirklich entziehen (ausser man hört nicht zu, da könnte man aber auch zuhause bleiben).
+				<li><b>c) Vorzüge des E-Learnings zu einer Vorlesung</b></li>
+					<p>Im Gegensatz zu einer Vorlesung, kann man sich beim E-Learning die Zeit und den Stoff einteilen. Das ist Vorteil wie auch Nachteil zu gleich. So kann man sich mehr Zeit für Dinge nehmen die man nicht auf Anhieb versteht, allerdings schiebt man es vor sich hin solange es geht. Es ist auch sehr hilfreich, den Stoff des E-Learnings noh mal in einer Vorlesung zusammen zu fassen, um letzte Unverständlichkeiten auszuräumen.</p>
+			</ul>
+
+		<li><b><u>4.2 - Matrixdarstellungen von Graphen</u></b></li>
+
+			<ul>
+				<li><b>a) Adjazenzmatrix</b></li>
+				\[
+				\begin{array}{c|c|c|c|c|c}
+				& Berlin & Amsterdam & Paris & Moskau & London \\
+				\hline Berlin & 0 & 650 & 1050 & 1900 & 1050 \\
+				\hline Amsterdam & 650 & 0 & 500 & 2500 & 500 \\
+				\hline Paris & 1050 & 500 & 0 & 2900 & 400 \\
+				\hline Moskau & 1900 & 2500 & 2900 & 0 & 2950 \\
+				\hline London & 1050 & 500 & 400 & 2950 & 0 \\
+				\end{array}
+				\]
+					<p>Bei der Darstellung handelt es sich um eine Adjazenzmatrix, da dargestellt wird welche Knoten mit einander durch eine Kante verbunden sind. Daraus ergibt sich bei \( n \) Knoten eine \( n \times n \)-Matrix. Bei einer Inzidenzmatrix wird die Verbindung von Knoten zu Kanten dargestellt. Es ergibt sich eine \( m \times n \)-Matrix mit \( n = \) der Anzahl der Knoten und \( m = \) Anzahl der Kanten. </p>
+				<li><b>b) Graph von a)</b></li>
+					<img class="centre" src="pic/arise_satan.png" alt="Ist nich so gemeint. Smiley">
+					<p>Bei der obigen Topologie handelt es sich um einen (vollständigen) Graphen ( \( \rightarrow \) siehe 4.2 d) ). D.h. alle Knoten sind miteinander verbunden. </p>
+				<li><b>c) Inzidenzmatrix</b></li>
+					\[
+					\begin{array}{c|c|c|c|c|c|c|c|c|c|c}
+					 & e_1 & e_2 & e_3 & e_4 & e_5 & e_6 & e_7 & e_8 & e_9 & e_{10} \\
+					\hline
+					A & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\
+					\hline
+					B & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+					\hline
+					M & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+					\hline
+					L & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+					\hline
+					P & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+					\end{array}
+					\]
+					<p>Wie schon bei a) festgestellt, handelt es sich bei der vorgegebenen Matrix um eine Adjazenzmatrix. Also ist oben dargestellte Matrix eine Inzidenzmatrix. Die mit \( e_i \) bezeichneten Parameter sind die Kanten, \( A, B, L, M, \) und \( P \) sind die Knoten. Dabei fällt auf, dass jeder Knoten mit mehreren Kanten verbunden sein kann, jede Kante aber nur mit jeweils zwei Knoten.</p>
+					<p> Wirklich große Vor- oder Nachteile hat keine Matrix gegenüber der anderen. Wie man an diesem Beispiel sieht, lässt ein Matrizentyp schnell in den anderen Umrechenen. Was hier allerdings verloren geht, sind die Entfernungen. Diese werden in der Inzidenzmatrix nicht mehr dargestellt. Man könnte das jeweilige \( e_i \) mit der entsprechenden Entfernung austauschen, was jedoch zu Verwirrung bzw. Unübersichtlichkeit führen könnte, da öfters die gleichen Entfernungen für verschiedene Kanten gelten (im Beispiel sind das \(1050\) km, einmal Berlin-Paris, und einmal Berlin-London). Dafür lassen sich Fehler in einer Inzidenzmatrix schneller finden, da Kanten nur mit jeweils zwei Knoten verbunden sein können. </p>
+				<li><b>d) graphentheoretische Attribute</b></li>
+					<ul>
+						<li>gerichtet</li>
+							<p>Ist ein Graph gerichtet, heißt das, dass die Kanten eine Richtung haben. Verläuft eine Kante \( e \) von \( x \) nach \( y \) wird  sie mit \( e = (x,y) \) dargestellt. Dabei ist \( x \) der Anfang bzw. der Fuß und \( y \) das Ende bzw. der Kopf von \( e \). \( (y,x) \) ist dabei die Invertierung von \( e \). Gibt es in einem Graphen zu jeder gerichteten Kante auch die invertierte Kante, ist ein Graph symmetrisch. So könnte man unseren Graphen auch als symmetrischen gerichteten Graphen interpretieren. </p>
+						<li>vollständig</li>
+							<p>In einem vollständigem Graphen sind alle Knoten durch Kanten miteinander verbunden. Das trifft in unserem Fall zu. Ein vollständiger Graph kann gerichtet als auch ungerrichtet sein.</p>
+						<li>gewichtet</li>
+							<p>Bei einem gewichteten Graphen gibt es zwei Fälle. Entweder er ist knotengewichtet oder er ist kantengewichtet. In beiden Fällen werden entweder die Knoten oder die Kanten auf die reelen Zahlen abgebildet. Hier handelt es sich sogar um einen vollständigen kantengewichtigen bzw. einen metrischen Graphen, auch Distanzgraph genannt. Die Kanten werden hier auf die Distanzen der jeweiligen Knoten abgebildet. </p>
+
+						<span class="quelle"><p>(Quellen: de.wikipedia.org - <a href="http://de.wikipedia.org/wiki/Gerichteter_Graph">Gerichteter Graph</a>, <a href="http://de.wikipedia.org/wiki/Vollst%C3%A4ndiger_Graph">vollständiger Graph</a>, <a href="http://de.wikipedia.org/wiki/Kantengewichteter_Graph">kantengewichteter Graph</a>, <a href="http://de.wikipedia.org/wiki/Graph_(Graphentheorie)">Graph (Graphentheorie)</a>)</p></span>
+
+					</ul>
+				<li><b>e) Übertragung eines elektrischen Signals</b></li>
+					<p>Bei der Übertragung gehen wir davon aus, dass sich das elektrische Signal mit \( 0,8 \)-facher Lichtgeschwindigkeit (\( \rightarrow \) ICÜbung) bewegt. Für die längste Strecke hab ich \( 7550 \) km (entspricht \( 7550000 \) m) errechnet.
+					<br>
+					(London \( \rightarrow \) Moskau \( \rightarrow \) Paris \( \rightarrow \) Berlin \( \rightarrow \) Amsterdam)</p>
+					\[
+					\begin{align*}
+						0,8 \cdot 2,99792458 \cdot 10^8 \frac{m}{s}= 239833966,4 \frac{m}{s} &= \frac{7550000 \textit{ m}}{t}
+					\\
+					\\	t &= \frac{7550000 \textit{ m}}{239833966,4 \frac{m}{s}}
+					\\
+					\\	t &= 0,03148011148 \textit{ s}
+					\end{align*}
+					\]
+				<li><b>f) Netzwerk-Topolgien</b></li>
+					<p> Im folgenden \( e \) (Kanten) als Funktion von \( v \) (Knoten):</p>
+					<p>
+					\[
+					\begin{align*}
+					&\textbf{Stern:} 								&e &= v - 1
+\\
+\\	 				&\textbf{Bus:}									&e &= 1  \textit{ oder } e = v + 1
+\\
+\\					&\textbf{Ring:} 									&e &= v
+\\
+\\					&\textbf{Rad:}									&e &= v + (v - 1)
+\\
+\\					&\textbf{Binärbaum:}								&e &= v - 1
+\\
+\\					&\textbf{vollständiler Graph:} 					&e &= \frac{v \cdot (v - 1)}{2}
+\\
+\\					&\textbf{Gitter:} \text{für quadratische Gitter gilt} 	&e &= (v - \sqrt{v})\cdot 2
+\\
+\\					&\text{Allgemein gilt:} 								&e &= 2 \cdot v - ( m + n )
+\\	                &\text{mit m =  Spaltenanzahl und n =  Zeilenanzahl}
+\\
+\\					&\textbf{Toroid:}									&e &= 2 \cdot v
+					\end{align*}
+					\]
+<br>
+					</p>
+					<img src="pic/i_am_a_legend.png"><img src="pic/wow_graphen_awesome.png">
+			</ul>
+
+		<li><b><u>4.4 - Wellenausbreitung und Antennenhöhen</u></b></li>
+
+			<ul>
+				<li><b>d) DVB-T2</b></li>
+				<ul>
+					<li>Frequenzbereich</li>
+					<p>
+					Der Frequenzbereich für <b>UHF</b>-Band (<b>u</b>ltra <b>h</b>igh <b>f</b>equency), auch <b>Dezimeterwelle</b> genannt, liegt zwischen \( 0,3 \texttt{ GHz}\) und \( 3 \texttt{ GHz}\) bzw. zwischen \( 300 \texttt{ MHz}\) und \( 3000 \texttt{ MHz}\). Bei UHF handelt es sich um direkte Welle, was bedeutet das zwischen Sender und Empfänger Sichtkontakt gewährleistet werden muss, um eine störungsfreie Übertragung zu ermöglichen. Durch die hohe Frequenz gelten für die Wellen quasi die optischen Gesetze wie die für Brechung und Beugung. Dafür ist die spektrale Effienz höher als beim Vorgänger (DVB-T).
+					</p>
+					<li>Länge einer Stabantenne</li>
+					<p>In Deutschland sendet der DVB-T Kanal 50 mit \( 706 \textit{ MHz} \). Stabantennen benötigen eine Länge von \( \frac{\lambda}{4} \), bei Yagi-Uda-Antennen (kurz: Yagiantennen) liegt die Länge bei \( \frac{\lambda}{2} \). Das heißt wir benötigen zuerst die Wellenlänge \( \lambda \): </p>
+					\[
+					\begin{align*}
+					\lambda &= \frac{c}{f} \\
+					\lambda &= \frac{299792458 \frac{m}{s}}{706000000 \textit{ Hz}} \\
+					\lambda &= 0,4246352096 \textit{ m} \\
+					\\
+					\frac{\lambda}{4} &= \frac{0,4246352096 \textit{ m}}{4} \\
+									  &= 0,1061588024 \textit{ m} \\
+									  &\approx 10,616 \textit{ cm}
+					\end{align*}
+					\]
+					<p>Die Stabantenne müsste so ca. \( 10,616 \textit{ cm} \) hoch sein. </p>
+					<li>Länge eines Reflektors einer Yagiantenne</li>
+					\[
+					\begin{align*}
+					\frac{\lambda}{2} &= \frac{0,4246352096 \textit{ m}}{2} \\
+									  &= 0,2123176048 \textit{ m} \\
+									  &\approx 21,232 \textit{ cm}
+					\end{align*}
+					\]
+					<p>Der Reflektor der Yagiantenne müsste dementsprechend \( 21,232 \textit{ cm} \) hoch sein. </p>
+					<span class="quelle">(Quellen: <a href="http://de.wikipedia.org/wiki/Dezimeterwelle">Dezimeterwelle</a>, <a href="http://de.wikipedia.org/wiki/DVB-T2">DVB-T2</a>, <a href="http://de.wikipedia.org/wiki/Liste_der_DVB-T-Sender_in_Deutschland">DVB-T-Sender in DE</a>, <a href="http://de.wikipedia.org/wiki/Yagi-Uda-Antenne">Yagiantenne</a>, <a href="http://de.wikipedia.org/wiki/Monopolantenne">Stabantenne</a>)</span>
+					</ul>
+				<li><b>e) Die Sendeantenne auf dem Ettersberg und das Thüringen-Journal in Berlin</b></li>
+					<figure><img class="centre" src="pic/wat_soll_dat_denn_darstellen.png" alt="Ne Zeichnung du Eumel!"> <figcaption>(Grafik erstellt mit Paint)</figcaption> </figure>
+
+					<p>Nehmen wir die höchsten Punkte der beiden Städte Weimar und Berlin. In Weimar ist dies der Große Ettersberg (\( E \)) mit \( 481,6 \textit{ m} \). In Berlin haben wir den Großen Müggelberg (\( B \)) mit \( 115 \textit{ m} \). Der Erdradius (\( r \)) beträgt ungefähr \( 6371 \textit{ km} \equiv 6371000 \textit{ m} \). Die Antenne auf dem Ettersberg soll \( 29 \textit{ m} \) (\( y \)) hoch sein. Damit haben wir vom Erdmittelpunkt aus eine Höhe von \( 6371510,6 \textit{ m} \) in Weimar und \( 6371115 + x \textit{ m } \) mit \( x \) gleich der Höhe der zuerrichtenden Antenne. Die Entfernung zwischen dem Ettersberg und dem Großen Müggelberg beträgt ungefähr \( 225130 \textit{ m} \) Luftlinie. Diese Strecke kann man sich als eine Gerade (t) vorstellen, die die Erde tangiert. Dabei teilt sich das Dreieck (E'B'M) in zwei rechtwinklige Dreiecke (\(E'TM\)) und (\(MTB'\)). </p>
+<br>
+					\[
+					\begin{align*}
+					l_1 &= \sqrt{(a + y)^2 - r^2} \\
+					l_1 &= \sqrt{6371510,6^2 \textit{ m}^2 - 6371000^2 \textit{ m}^2} \\
+					l_1 &= 80661,8 \textit{ m} \\
+					\\
+					l_2 &= t - l_1 \\
+					l_2 &= 225130 \textit{ m} - 80661,8 \textit{ m} \\
+					l_2 &= 144468,2004 \textit{ m} \\
+					\\
+					b + x &= \sqrt{l_2^2 + r^2} \\
+					6371000 \textit{ m} + x &= \sqrt{80661,8^2 \textit{ m}^2 + 6371000^2 \textit{ m}^2} \\
+					6371000 \textit{ m} + x &= 6372637,763 \textit{ m} \\
+					\\
+					x &= 6372637,763 \textit{ m} - 6371000 \textit{ m} \\
+					x &= 1522,763198 \textit{ m} \\
+					\end{align*}
+					\]
+					<p>Die Antenne in Berlin müsste also ca. \( 1522,76 \) Meter hoch sein. Damit wäre es das höchste Bauwerk der Welt und damit höher als das Burj Khalifa in Dubai (ca. \( 830 \) m)</p>
+
+
+
+					<span class="quelle">(Entfernungen laut <a href="http://www.luftlinie.org/">Luftlinie.org</a>)</span>
+			</ul>
+			<p><a href="infokot.html">Zurück zur Aufgabenübersicht</a></p>
+	</ul>
+</div>
+<body>
+
+</body>
+</html>

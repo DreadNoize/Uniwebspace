@@ -29,10 +29,11 @@
                     \begin{align*} 
                     I_{ges} &= I_{1} + I_{2} + I_{3} \\
                     \Rightarrow I_{1} &= I_{2} = I_{3} = \frac{1}{3} I_{ges}\\
-                    \text{Daraus folgt } I_{4} &= I_{5}= I_{6}= I_{7}= I_{8}= I_{9} = \frac{1}{2} I_{1} = \frac{1}{2} I_{2} = \frac{1}{2} I_{3} =  \frac{1}{6} I_{ges}\\
-                    \text{und daraus wiederum } I_{10} &= I_{11} = I_{12} = I_{4} + I_{9}= I_{5} + I_{6} = I_{7} + I_{8} = \frac{1}{3} I_{ges}
+                    \texttt{Daraus folgt } I_{4} &= I_{5}= I_{6}= I_{7}= I_{8}= I_{9} = \frac{1}{2} I_{1} = \frac{1}{2} I_{2} = \frac{1}{2} I_{3} =  \frac{1}{6} I_{ges}\\
+                    \texttt{und daraus wiederum } I_{10} &= I_{11} = I_{12} = I_{4} + I_{9}= I_{5} + I_{6} = I_{7} + I_{8} = \frac{1}{3} I_{ges}
                     \end{align*}
                     \]
+
             <ul><li><b>a) Resultierender Widerstand R<sub>AF</sub></b></li>
                     <p>Um den Widerstand R<sub>AF</sub> (= R<sub>FA</sub>) zu berechenen, müssen wir erst einen Weg von F zu A finden. Der gewählte Weg führt hier von F nach C über den Widerstand R<sub>21</sub>, von C zu B über den Widerstand R<sub>14</sub> und von B anschließend zu A. Das heißt wir haben hier drei Widerstände, an denen wir drei  Spannungen haben. Diese ergeben summiert die Spannung U<sub>FA</sub> welche gleich der Spannung U<sub>0</sub> ist. Wir haben also den Maschensatz: <b> U<sub>0</sub> = U<sub>FC</sub> + U<sub>CB</sub> + U<sub>BA</sub></b></p>
                     
@@ -40,7 +41,7 @@
                     \[
                     \begin{align*}
                         U_{0} &= I_{1} \cdot R_{21} + I_{5} \cdot R_{14} + I_{11} \cdot R_{17}\\ \\
-                        &\text{Da alle Widerstände gleich sind, kann man auf die Indizes verzichten:}\\ \\
+                        &\texttt{Da alle Widerstände gleich sind, kann man auf die Indizes verzichten:}\\ \\
                         U_{0} &= I_{1} \cdot R + I_{5} \cdot R + I_{11} \cdot R\\
                         U_{0} &= (I_{1} + I_{5} + I_{11}) \cdot R\\
                         U_{0} &=  \frac{1}{3} I_{ges} + \frac{1}{6} I_{ges} + \frac{1}{3} I_{ges}) \cdot R\\
@@ -52,22 +53,51 @@
                     \begin{align*}
                     R_{FA} &= R_{AF} = R_{ges} = \frac{U_{FA} = U_0}{I_{FA} = I_{ges}}\\ \\
                     &= \frac{\frac{5}{6} \cdot I_{ges} \cdot R}{I_{ges}}\\ \\
-                    &= \frac{5}{6} \cdot R = \frac{5}{6} \cdot 1 \text{ k}\Omega = \frac{5}{6} \text{ k}\Omega \\ \\
+                    &= \frac{5}{6} \cdot R = \frac{5}{6} \cdot 1 \texttt{ k}\Omega = \frac{5}{6} \texttt{ k}\Omega \\ \\
                     \end{align*}
                     \]
-
-                <li><b>b) Resultierender Widerstand R<sub>AC</sub></b></li>
-                    <p>Hierfür müssen wir uns nur die Masche ABCD anschauen. Um zu sehen welche Widerstände parallel zu einander sind, muss überprüft werden, wo gleiche Spannungen auftauchen. Da alle Widerstände gleich sind und nur der Strom sich ändert, ist das relativ einfach.</p>
+                    <p>Man könnte auch damit argumentieren, dass die Punkte C, E und G und B, D und H jeweils auf dem gleichen Potential liegen (da die Ströme und Spannungen gleich sind), und man diese dann auch zusammen legen kann. Damit bekommen wir ein Schaltbild mit den Knoten F, CEG, BDH und A. Damit liegen jeweils R<sub>21</sub>, R<sub>13</sub> und R<sub>20</sub>, R<sub>14</sub>, R<sub>18</sub>, R<sub>16</sub>, R<sub>22</sub>, R<sub>19</sub> und R<sub>12</sub> und zuletzt R<sub>17</sub>, R<sub>15</sub> und R<sub>23</sub> parallel zu einander.</p> 
+                    <img src="pic/ledwuerfel3.png" alt="eipuhguhsfesdsg">
+                    <p> Es ergibt sich ein Gesamtwiderstand </p>
                     \[
                     \begin{align*}
-                    R_{AC} &= (R_{15} || R_{17}) || (R_{14} || R_{16})\\ \\
-                    R_{AC} &= \frac{(R_{15} || R_{17}) \cdot (R_{14} || R_{16})}{(R_{15} || R_{17}) + (R_{14} || R_{16})}\\ \\
-                    R_{AC} &= \frac{\left( \frac{R_{15} \cdot R_{17}}{R_{15} + R_{17}}\right) \cdot \left( \frac{R_{14} \cdot R_{16}}{R_{14} + R_{16}}\right)}{\left( \frac{R_{15} \cdot R_{17}}{R_{15} + R_{17}}\right) + \left( \frac{R_{14} \cdot R_{16}}{R_{14} + R_{16}}\right)}\\ \\
-                    R_{AC} &= \frac{\left( \frac{1}{2} \text{ k}\Omega \right) \cdot \left( \frac{1}{2} \text{ k}\Omega \right)}{\left( \frac{1}{2} \text{ k}\Omega \right) + \left( \frac{1}{2} \text{ k}\Omega \right)} = \frac{ \frac{1}{4} \text{ k}\Omega^2}{1 \text{ k}\Omega} = \frac{1}{4}  \text{ k}\Omega \\ \\
+                    &\texttt{Formel für parallele Widerstände: }\\
+                    \frac{1}{R_{ges}} &= \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + ... + \frac{1}{R_n} \\
+                    &\texttt{Da hier alle Widerstände gleich: } \\
+                    ⇒ R_{ges} &= \frac{R}{n} \\ \\
+
+                    ⇒ R_{ges} &= \frac{R}{3} + \frac{R}{6} + \frac{R}{3} = \frac{5}{6} R = \frac{5}{6} \texttt{ k}\Omega
+                    \end{align*}
+                    \]
+                    <p>Hier noch ein Schaltbild, welches zeigt, wo Spannungen gleich sind und so auch die Potenziale.</p>
+                    <img src="pic/ledwuerfel2.png" alt="getting sick of this shit">
+                <li><b>b) Resultierender Widerstand R<sub>AC</sub></b></li>
+                    <p>Für diese Rechnung legen wi die Knoten G und E, und B und D zusammen. Durch die gleichen Potentiale ist dies möglich. Dann legen wir eine Spannung an A und C an.</p>
+                    <p>Das zugehörige Schaltbild:</p>
+                    <img src="pic/ledwuerfel4.png" alt="Wie viel denn noch?">
+                    <p>Aus dem Schaltbild kann man entnehmen, das zwischen BD und GE kein Strom fließt, da die Spannung 0 ist. D.h. wir müssen die dazwischen liegenden Widerstände nicht beachten. </p>
+                    <img src="pic/ledwuerfel5.png" alt="Letztes Schaltbild">
+                    <p>Für die Rechnung heißt das:</p>
+                    \[
+                    \begin{align*}
+                    R_{CA} = R_{AC} &= (R + \frac{R}{2} + \frac{R}{2} + R)||(\frac{R}{2} + \frac{R}{2}) = (3 \cdot R)||(R)\\ \\
+                    R_{AC} &= \frac{3 \cdot R \cdot R}{3 \cdot R + R} = \frac{3 \cdot R^2}{4 \cdot R} = \frac{3}{4} R = \frac{3}{4} \texttt{ k}\Omega
                     \end{align*}
                     \]
 
                 <li><b>c) Resultierender Widerstand R<sub>AB</sub></b></li>
+                <p>Diesmal legen wir die Knoten E und C, und H und D zusammen und die Spannung an A und B. Bei dieser Schaltung entfallen die Widerstände zwischen den zusammen gelegten Knoten nicht.</p>
+                <img src="pic/ledwuerfel6.png" alt="Lol doch nicht">
+                \[
+                \begin{align*}
+                R_{BA} = R_{AB} &= R || \left( \frac{R}{2} + \left( \left( \frac{R}{2} + R + \frac{R}{2} \right) || \frac{R}{2} \right) + \frac{R}{2} \right)\\ \\
+                R_{AB} &= R || \left( \frac{R}{2} + \left( 2 \cdot R || \frac{R}{2} \right) + \frac{R}{2} \right)\\ \\
+                R_{AB} &= R || \left( \frac{R}{2} + \left( \frac{2 \cdot R \cdot \frac{R}{2}}{2 \cdot R + \frac{R}{2}} \right) + \frac{R}{2} \right)\\ \\
+                R_{AB} &= R || \left( \frac{R}{2} + \left( \frac{ R^2 }{\frac{5 \cdot R}{2}} \right) + \frac{R}{2} \right) = R || \left( \frac{R}{2} + \left( \frac{2 \cdot R }{5} \right) + \frac{R}{2} \right)\\ \\
+                R_{AB} &= R || \left( \frac{5 \cdot R}{10} + \frac{ 4 \cdot R}{10} + \frac{5 \cdot R}{10} \right) = R || \frac{14 \cdot R}{10} = R || \frac{7 \cdot R}{5}\\ \\
+                R_{AB} &= \frac{R \cdot \frac{7 \cdot R}{5}}{R + \frac{7 \cdot R}{5}} = \frac{\frac{7 \cdot R^2}{5}}{\frac{12 \cdot R}{5}} = \frac{7}{12} R = \frac{7}{12} \texttt{ k}\Omega
+                \end{align*}
+                \]
 
             </ul>
 

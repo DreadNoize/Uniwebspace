@@ -106,67 +106,212 @@
         <p>Formel für den Leistungspegel L<sub>u</sub>:</p>
         \[
         \begin{align*}
-        L_u &= 20 \cdot log\left( \frac{U}{U_0} \right)
+        L_u &= 20 \cdot log\left( \frac{U}{U_b} \right)
         \end{align*}
         \]
-        <p>Da als Einheit <b>dBu</b> festgelegt ist, ist der Bezugswert U<sub>0</sub> = 0,7746 V</p>
-            <ul><li><b>a) Reduzierte Spannungen U<sub>N</sub></b></li>
+        <p>Da als Einheit <b>dBu</b> festgelegt ist, ist der Bezugswert U<sub>b</sub> = 0,7746 V. Dieser berechnet sich aus \( \sqrt{600 \, \Omega \cdot 0.001\,\mathrm W} = \sqrt{0.6 \, \left[\Omega \cdot \,\mathrm W = \frac{V}{A} \cdot V \cdot A = V^2\right]} \approx 0.7746 V\). Das u steht dabei für "unloaded" (Leerlauf) oder "unspecified", was andeuten soll, das der Lastwiderstand sehr groß ("hochohmig") wird.</p>
+        <span class="quelle">(Quelle: <a href="http://www.sengpielaudio.com/ElektrischeSpannungUndDieDB.pdf">Sengpielaudio.com</a></span>
+        <p>Um nun die jeweiligen Spannungen zu errechnen müssen wir die Pegel-Formel umstellen:</p>
+        \[
+        \begin{align*}
+        L_u &= 20 \cdot log\left( \frac{U}{U_b} \right)\\
+        \frac{L_u}{20} &= log\left( \frac{U}{U_b} \right)\\
+        10^{\frac{L_u}{20}} &= \frac{U}{U_b} \\
+        U &= 10^{\frac{L_u}{20}} \cdot U_b
+        \end{align*}
+        \]
+        <p>Nun kann man die U ausrechenen. Z.B. mit einem kleinen Python-Script:</p>
+        <pre>
+            <code>
+                >>> dBu = [0,-1,-3,-6,-10,-20,-30,-40,-50,-60]
+                >>> U = [(0.7746*10**(Lu/20))*1000 for Lu in dBu]
+                >>> for i in U: print(i)
+                ...
+                774.5999999999999
+                690.3629766783993
+                548.3748045839532
+                388.21963116768507
+                244.95002755664265
+                77.46000000000001
+                24.495002755664263
+                7.7459999999999996
+                2.4495002755664266
+                0.7746
+
+            </code>
+        </pre>
+        <p>Daraus lassen sich die jeweiligen U<sub>N</sub> berechen: \( U_N = \frac{R_N || R_L}{R_i + R_N || R_L} \cdot U \)</p>
+        <pre>
+            <code>
+                >>> Un = [(1000000/1001000)*u for u in U]
+                >>> for i in Un: print(i)
+                ...
+                773.8261738261738
+                689.6733033750243
+                547.8269776063469
+                387.83179936831675
+                244.70532223440824
+                77.3826173826174
+                24.470532223440824
+                7.7382617382617385
+                2.4470532223440826
+                0.7738261738261738
+            </code>
+        </pre>
+        <p>Aus der Formel für die Spannung:</p>
+        \[
+        \begin{align*}
+        U_N &= \frac{R_N || R_L}{R_i + (R_N || R_L)} \cdot U_0\\
+        \end{align*}
+        \]
+        <p>kann man nun durch Umstellen die Widersttände berechnen:</p>
+        \[
+        \begin{align*}
+        U_N &= \frac{R_N || R_L}{R_i + (R_N || R_L)} \cdot U_0\\
+
+        U_N &= \frac{ \frac{R_N \cdot R_L}{R_N + R_L} }{R_i + \left( \frac{R_N \cdot R_L}{R_N + R_L} \right)} \cdot U_0 \\ \\
+
+        U_N &= \frac{ R_N \cdot R_L }{(R_N + R_L) \cdot \left(R_i + \left( \frac{R_N \cdot R_L}{R_N + R_L} \right)\right)} \cdot U_0 \\ \\
+
+        U_N &= \frac{ R_N \cdot R_L }{R_N \cdot R_i + R_L \cdot R_i + R_N \cdot R_L } \cdot U_0 \\ \\
+
+        \frac{U_N}{U_0} &= \frac{ R_N \cdot R_L }{R_N \cdot R_i + R_L \cdot R_i + R_N \cdot R_L }\\ \\
+
+        \frac{U_N \cdot (R_N \cdot R_i + R_L \cdot R_i + R_N \cdot R_L ) }{U_0} &= R_N \cdot R_L\\ \\
+
+        \frac{U_N \cdot R_N \cdot R_i + U_N \cdot R_L \cdot R_i +  U_N \cdot R_N \cdot R_L  }{U_0 \cdot R_L} &= \frac{U_N \cdot R_N \cdot R_i}{U_0 \cdot R_L} + \frac{U_N \cdot R_L \cdot R_i}{U_0 \cdot R_L} +  \frac{U_N \cdot R_N \cdot R_L  }{U_0 \cdot R_L} = R_N \\ \\
+
+        \frac{U_N \cdot R_i}{U_0 \cdot R_L} + \frac{U_N \cdot R_i}{U_0 \cdot R_N} +  \frac{U_N}{U_0} &= 1 \\ \\
+
+        \frac{U_N \cdot R_i}{U_0 \cdot R_L} + \frac{U_N \cdot R_i}{U_0 \cdot R_N} +  \frac{U_N}{U_0} - 1 &= 0 \\ \\
+
+        \frac{U_N \cdot R_i}{U_0 \cdot R_L} + \frac{U_N}{U_0} - 1 &=  - \frac{U_N \cdot R_i}{U_0 \cdot R_N}\\ \\
+
+        (U_0 \cdot R_N) \cdot \left( \frac{U_N \cdot R_i}{U_0 \cdot R_L} + \frac{U_N}{U_0} - 1 \right) &=  - U_N \cdot R_i\\ \\
+
+        U_0 \cdot R_N &=  \frac{- U_N \cdot R_i}{\left( \frac{U_N \cdot R_i}{U_0 \cdot R_L} + \frac{U_N}{U_0} - 1 \right)}\\ \\
+
+        R_N &=  \frac{- U_N \cdot R_i}{\left( \frac{U_N \cdot R_i}{U_0 \cdot R_L} \cdot U_0 + \frac{U_N}{U_0} \cdot U_0 - U_0 \right)}\\ \\
+
+        R_N &=  \frac{- U_N \cdot R_i}{\left( \frac{U_N \cdot R_i}{R_L} + U_N - U_0 \right)}\\ \\
+
+        R_N &=  \frac{- U_N \cdot R_i}{\left( \frac{U_N \cdot R_i + U_N \cdot R_L - U_0 \cdot R_L}{R_L} \right)}\\ \\
+        R_N &=  \frac{- U_N \cdot R_i \cdot R_L }{U_N \cdot R_i + U_N \cdot R_L - U_0 \cdot R_L }\\ \\
+        \end{align*}
+        \]
+        <p>Zur Berechnung bietet sich auch hier ein Python-Script an:</p>
+        <pre>
+            <code>
+                >>> Rn = [(((-s/1000)*RL*Ri)/((s/1000)*Ri + (s/1000)*RL - U0*RL)) for s in Un]
+                //Da Un in mV angegeben ist, müssen wir s/1000 rechnen um wieder auf Volt zukommen und somit am Ende auf Ohm.
+                >>> for i in Rn:print(i)
+                ...
+                -232327312.2340777 //Das ist natürlich Quatsch.
+                8187.618070506835 //Ab hier dann die korrekten Werte
+                2421.6358504324257
+                1003.7651339266192
+                462.0161877284533
+                111.00064133308783
+                32.62295408312287
+                10.090963010980875
+                3.169153913523054
+                1.0000053043003727
+            </code>
+        </pre>
+            <ul><li><b>a) Reduzierte Spannungen U<sub>N</sub></b> + <b>b) Widerstände R<sub>N</sub></b></li>
                 <table>
                   <tr>
                     <th>dBu</th>
                     <th>U<sub>N</sub> in mV</th>
+                    <th>R<sub>N</sub> in &#937;</th>
                   </tr>
                   <tr>
                     <td>0</td>
-                    <td>773,82617</td>
+                    <td>773.82617</td>
+                    <td>1000000 = 10<sup>6</sup> = R<sub>L</sub></td>
                   </tr>
                   <tr>
                     <td>-1</td>
-                    <td></td>
+                    <td>689.67330</td>
+                    <td>8187.61807</td>
                   </tr>
                   <tr>
                     <td>-3</td>
-                    <td></td>
+                    <td>547.82698</td>
+                    <td>2421.63585</td>
                   </tr>
                   <tr>
                     <td>-6</td>
-                    <td></td>
+                    <td>387.8318</td>
+                    <td>1003.76513</td>
                   </tr>
                   <tr>
                     <td>-10</td>
-                    <td></td>
+                    <td>244.70532</td>
+                    <td>462.01619</td>
                   </tr>
                   <tr>
                     <td>-20</td>
-                    <td></td>
+                    <td>77.38262</td>
+                    <td>111.00064</td>
                   </tr>
                   <tr>
                     <td>-30</td>
-                    <td></td>
+                    <td>24.47053</td>
+                    <td>32.62295</td>
                   </tr>
                   <tr>
                     <td>-40</td>
-                    <td></td>
+                    <td>7.73826</td>
+                    <td>10.09096</td>
                   </tr>
                   <tr>
                     <td>-50</td>
-                    <td></td>
+                    <td>2.44705</td>
+                    <td>3.16915</td>
                   </tr>
                   <tr>
                     <td>-60</td>
-                    <td></td>
+                    <td>0.77383</td>
+                    <td>1.00001</td>
                   </tr>
                 </table>
 
-                <li><b>b) Widerstände R<sub>N</sub></b></li>
-
-            
-
                 <li><b>c) U(I) - Kennlinie und Lastgerade</b></li>
+                <p>Um die Arbeitspunkte zuerrechnen, brauchen wir die jeweiligen I<sub>N</sub>: \( I_N = \frac{U_N}{R_L} \). Kurzschlussstrom: \( I_K = \frac{U_0}{R_i} = \frac{\sqrt{0.6} \text{ V}}{1000 \text{ }\Omega} \approx 0.0007746 \left[ \frac{V}{\Omega} = \frac{V}{\frac{V}{A}} = \frac{V \cdot A}{V} = A \right] \)  </p>
+                <pre>
+                    <code>
+                        >>> In = [(x/1000)/RL for x in Un]
+                        >>> for i in In: print(i)
+                        ...
+                        7.73826e-07
+                        6.89673e-07
+                        5.47827e-07
+                        3.87832e-07
+                        2.44705e-07
+                        7.73826e-08
+                        2.44705e-08
+                        7.73826e-09
+                        2.44705e-09
+                        7.73826e-10
+                    </code>
+                </pre>
+
+                <img src="pic/KennlinieWhole.png" alt="Dit jroße und janze">
+                <img src="pic/KennlinieZoom.png" alt="Zoom, Zoom">
+                <img src="pic/KennlinieMoreZoom.png" alt="We have to go deeper">
+                <img src="pic/KennlinieSuperZoom.png" alt="Closer!">
+                <img src="pic/KennlinieUltraZoom.png" alt="Is this even possible?">
+
+                <p></p>
 
 
 
                 <li><b>d) Schaltung mit serieller Anordnung</b></li>
+
+                <img src="pic/est45seriell.png" alt="'Du musst dir mal den Kerzenstecker isoliern lassn'">
+
+                <p>In diesem Fall müsste man die bisherigen R<sub>N</sub> jeweils addieren, heißt z.B. für \( R_{10} \Rightarrow U_{10} = \frac{(R_1 + R_3 + R_6 + R_{10}) || R_L}{R_i + ((R_1 + R_3 + R_6 + R_{10})|| R_L)} \) </p>
 
             </ul>
 </ul>
